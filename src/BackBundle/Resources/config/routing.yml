@@ -1,0 +1,32 @@
+back_homepage:
+    path:     /
+    defaults: { _controller: BackBundle:Default:index }
+ajouter_livreur:
+    path:     /ajouterlivreur
+    defaults: { _controller: BackBundle:Livreur:ajouterlivreur }
+
+
+afficher_livreur:
+    path:     /afficherlivreur
+    defaults: { _controller: BackBundle:Livreur:afficherlivreur }
+
+
+supprimerLivreur :
+    path:     /supprimerLivreur/{id}
+    defaults: { _controller: BackBundle:Livreur:supprimerLivreur }
+modifierLivreur :
+    path:     /modifierLivreur/{id}
+    defaults: { _controller: BackBundle:Livreur:modifierLivreur }
+
+ajouter_Produit:
+    path:     /ajouterProduit
+    defaults: { _controller: BackBundle:Produit:ajouterProduit }
+afficher_Produit:
+    path:     /afficherProduit
+    defaults: { _controller: BackBundle:Produit:afficherProduit }
+supprimerProduit :
+    path:     /supprimerProduit/{id}
+    defaults: { _controller: BackBundle:Produit:supprimerProduit }
+modifierProduit :
+    path:     /modifierProduit/{id}
+    defaults: { _controller: BackBundle:Produit:modifierProduit }

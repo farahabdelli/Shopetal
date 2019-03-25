@@ -1,0 +1,12 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+layout:
+    path:     /layout
+    defaults: { _controller: FrontBundle:Default:layout }
+afficheM :
+    path:     /afficheM
+    defaults: { _controller: FrontBundle:Produits:afficheM }
+Ajout2:
+    path:     /create2
+    defaults: { _controller: FrontBundle:Produits:create2 }

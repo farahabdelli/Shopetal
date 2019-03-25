@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Focus Admin</title>
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+    <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/calendar2/pignose.calendar.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/chartist/chartist.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/owl.carousel.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/owl.theme.default.min.css') }}" >
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/weather-icons.css') }}" >
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/menubar/sidebar.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/lib/helper.css') }}">
+    <link rel="stylesheet" href="{{ asset('templateback/assets/css/style.css') }}">
+</head>
+
+<body>
+
+<div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+    <div class="nano">
+        <div class="nano-content">
+            <ul>
+                <div class="logo"><a href="index.html"><span>Shopetal</span></a></div>
+                <li class="label"></li>
+
+
+
+                <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Statistiques  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                    <ul>
+                        <li><a href="chart-flot.html">Produits</a></li>
+                        <li><a href="chart-morris.html">Services</a></li>
+                        <li><a href="chartjs.html">Commandes</a></li>
+                        <li><a href="chartist.html">Livreurs</a></li>
+                        <li><a href="chart-peity.html">offres</a></li>
+                        <li><a href="chart-sparkline.html">Coupons</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="app-event-calender.html"><i class="ti-layout-grid2-alt"></i> Produits </a></li>
+                <li><a href="app-email.html"><i class="ti-layout-grid2-alt"></i> Services</a></li>
+                <li><a href="app-profile.html"><i class="ti-shopping-cart"></i> Commandes</a></li>
+                <li><a href="app-widget-card.html"><i class="ti-truck"></i> Livreurs</a></li>
+                <li><a href="app-widget-card.html"><i class="ti-user"></i> Jardiniers</a></li>
+                <li><a href="app-widget-card.html"><i class="ti-heart"></i> Offres</a></li>
+                <li><a href="app-widget-card.html"><i class="ti-ticket"></i> Coupons</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- /# sidebar -->
+
+<div class="header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="float-left">
+                    <div class="hamburger sidebar-toggle">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </div>
+                </div>
+                <div class="float-right">
+
+
+                    <div class="dropdown dib">
+                        <div class="header-icon" data-toggle="dropdown">
+                                <span class="user-avatar">Akthem Arfaoui
+                                        <i class="ti-power-off"></i>
+
+                                </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content-wrap">
+    <div class="main">
+        <div class="container-fluid">
+            <br><br>
+
+            <!-- /# row -->
+            {% block main %}{% endblock main %}
+
+        </div>
+    </div>
+
+</div>
+
+<!-- jquery vendor -->
+<script src="{{ asset('templateback/assets/js/lib/jquery.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/jquery.nanoscroller.min.js') }}"></script>
+<!-- nano scroller -->
+<script src="{{ asset('templateback/assets/js/lib/menubar/sidebar.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/preloader/pace.min.js') }}"></script>
+<!-- sidebar -->
+
+<script src="{{ asset('templateback/assets/js/lib/bootstrap.min.js')}})"></script>
+<script src="{{ asset('templateback/assets/js/scripts.js')}}"></script>
+<!-- bootstrap -->
+
+<script src="{{ asset('templateback/assets/js/lib/calendar-2/moment.latest.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/calendar-2/pignose.calendar.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/calendar-2/pignose.init.js') }}"></script>
+
+
+<script src="{{ asset('templateback/assets/js/lib/weather/jquery.simpleWeather.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/weather/weather-init.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/circle-progress/circle-progress.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/circle-progress/circle-progress-init.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/chartist/chartist.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/sparklinechart/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/sparklinechart/sparkline.init.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('templateback/assets/js/lib/owl-carousel/owl.carousel-init.js') }}"></script>
+<!-- scripit init-->
+<script src="{{ asset('templateback/assets/js/dashboard2.js') }}"></script>
+</body>
+
+</html>

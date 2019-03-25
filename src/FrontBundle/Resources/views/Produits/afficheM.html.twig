@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block contenta %}
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+<h2>--la liste des Produits--</h2>
+<table border="1">
+    <tr>
+        <td>nom</td>
+        <td>prix</td>
+
+
+
+    </tr>
+    <tr>
+        {% for i in m %}
+        <td>{{ i.nom }}</td>
+        <td>{{ i.prix }}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

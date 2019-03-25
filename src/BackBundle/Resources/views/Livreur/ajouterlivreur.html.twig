@@ -1,0 +1,40 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+<h2>Ajouter un livreur</h2>
+    <br><br>
+<form method="POST">
+        <tr>
+                <td>Id:</td>
+                <td><input type="number" class="form-control input-default " name="id"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Nom et prénom:</td>
+            <td><input type="text" class="form-control input-default " name="nom"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Mail:</td>
+            <td><input type="text" class="form-control input-default " name="mail"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Téléphone:</td>
+            <td><input type="number" class="form-control input-default " name="tel"></td>
+        </tr><br/><br/>
+        <tr>
+            <td>Disponibilité:</td>
+            <td><select name="dispo" class="form-control input-default ">
+                    <option  value="Disponible">Disponible</option>
+                    <option selected="selected" value="Non disponible">Non disponible</option>
+                </select></td><br/><br/>
+        </tr>
+
+        <tr>
+
+            <td><center><input type="submit" class="btn btn-default" value="Ajouter"></center></td><br/><br/>
+        </tr>
+
+
+</form>
+
+{% endblock %}
