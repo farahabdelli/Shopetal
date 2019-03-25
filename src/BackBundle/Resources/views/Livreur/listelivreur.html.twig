@@ -21,17 +21,25 @@
         </tr>
         </thead>
         <tbody>
+
+            {% for i in m %}
         <tr>
-            <!-- for i in m -->
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td>Column content</td>
-            <td class="btn btn-danger" >Supprimer</a> </td>
-            <td class="btn btn-warning" >Modifier</a> </td>
+
+            <td>{{ i.nomLivreur }}</td>
+            <td>{{ i.mailLivreu}}</td>
+            <td>{{ i.telLivreur }}</td>
+            <td>{{ i.disponibilite }}</td>
+
+
+
+
+
+
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerLivreur/{{ i.id }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierLivreur/{{ i.id }}" class="btn btn-warning" >Modifier</a> </td>
+
         </tr>
-
-
+        {% endfor %}
         </tbody>
     </table>
 
