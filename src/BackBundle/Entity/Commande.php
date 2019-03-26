@@ -52,7 +52,9 @@ class Commande
     /**
      * @var string
      *
-     * @ORM\Column(name="livreur", type="string", length=30, nullable=false)
+     * @ORM\ManyToOne(targetEntity="Livreur")
+     *
+     * @ORM\JoinColumn(name="livreur",referencedColumnName="id_livreur")
      */
     private $livreur;
 

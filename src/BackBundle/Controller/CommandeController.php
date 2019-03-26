@@ -5,6 +5,7 @@ namespace BackBundle\Controller;
 use BackBundle\Entity\Commande;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -37,7 +38,12 @@ class CommandeController extends Controller
             ->add('idUser', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('adresse', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('ville', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('livreur', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('livreur', EntityType::class,array(
+                'class' =>'BackBundle:Livreur',
+                'choice_label'=>'nomLivreur',
+                'multiple'=>false,
+                'placeholder' => ' ',
+                'attr' => array('class' => 'form-control')))
             ->add('etat', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
             ->getForm();
