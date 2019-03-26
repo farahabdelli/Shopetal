@@ -30,3 +30,17 @@ supprimerProduit :
 modifierProduit :
     path:     /modifierProduit/{id}
     defaults: { _controller: BackBundle:Produit:modifierProduit }
+
+
+afficher_commande:
+    path:     /affichercommande
+    defaults: { _controller: BackBundle:Commande:affichercommande }
+
+
+supprimerCommande :
+    path:     /supprimerCommande/{id}
+    defaults: { _controller: BackBundle:Commande:supprimerCommande }
+
+modifierCommande :
+    path:     /modifierCommande/{id}
+    defaults: { _controller: BackBundle:Commande:modifierCommande }

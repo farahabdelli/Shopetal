@@ -67,27 +67,22 @@ class LivreurController extends Controller
     }
 
 
-
-
-
-
-
     public function afficherlivreurAction()
     {
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('BackBundle:Livreur')->findAll();
 
-
-
-
-
         return $this->render('@Back/Livreur/listelivreur.html.twig',array('m'=>$modeles));
     }
+
+
+
+
     public function ajouterlivreurAction(Request $request)
     {
         $modele=new Livreur();
         if($request->isMethod('POST')){
-
+           // $modele->setIdLivreur($request->get('idLivreur'));
             $modele->setNomLivreur($request->get('nomLivreur'));
             $modele->setMailLivreur($request->get('mailLivreur'));
             $modele->setTelLivreur($request->get('telLivreur'));
@@ -96,7 +91,7 @@ class LivreurController extends Controller
             $em=$this->getDoctrine()->getManager();
             $em->persist($modele);
             $em->flush();
-
+            return $this->redirectToRoute('afficher_livreur');
         }
         return $this->render('@Back/Livreur/ajouterlivreur.html.twig');
 

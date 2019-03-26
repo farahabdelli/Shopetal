@@ -1,0 +1,10 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+    <a href="http://localhost/essai/web/app_dev.php/Back/affichercommande" class="btn btn-primary" >Retour</a><br><br>
+    <h3>Modifier commande</h3>
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+{% endblock %}
