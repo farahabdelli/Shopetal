@@ -42,6 +42,87 @@ class Voucher
      */
     private $rate;
 
+    /**
+     * Voucher constructor.
+     * @param string $vouchercode
+     * @param int $nbuse
+     * @param int $maxuse
+     * @param int $rate
+     */
+    public function Voucher($vouchercode, $nbuse, $maxuse, $rate)
+    {
+        $this->vouchercode = $vouchercode;
+        $this->nbuse = $nbuse;
+        $this->maxuse = $maxuse;
+        $this->rate = $rate;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVouchercode()
+    {
+        return $this->vouchercode;
+    }
+
+    /**
+     * @param string $vouchercode
+     */
+    public function setVouchercode($vouchercode)
+    {
+        $this->vouchercode = $vouchercode;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNbuse()
+    {
+        return $this->nbuse;
+    }
+
+    /**
+     * @param int $nbuse
+     */
+    public function setNbuse($nbuse)
+    {
+        $this->nbuse = $nbuse;
+    }
+
+    /**
+     * @return int
+     */
+    public function getMaxuse()
+    {
+        return $this->maxuse;
+    }
+
+    /**
+     * @param int $maxuse
+     */
+    public function setMaxuse($maxuse)
+    {
+        $this->maxuse = $maxuse;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRate()
+    {
+        return $this->rate;
+    }
+
+    /**
+     * @param int $rate
+     */
+    public function setRate($rate)
+    {
+        $this->rate = $rate;
+    }
+
+
+
 
 }
 

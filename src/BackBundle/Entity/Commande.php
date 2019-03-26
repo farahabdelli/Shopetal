@@ -63,6 +63,140 @@ class Commande
      */
     private $etat;
 
+    /**
+     * Commande constructor.
+     * @param int $idCommande
+     * @param string $total
+     * @param string $idUser
+     * @param string $adresse
+     * @param string $ville
+     * @param string $livreur
+     * @param string $etat
+     */
+    public function Commande($idCommande, $total, $idUser, $adresse, $ville, $livreur, $etat)
+    {
+        $this->idCommande = $idCommande;
+        $this->total = $total;
+        $this->idUser = $idUser;
+        $this->adresse = $adresse;
+        $this->ville = $ville;
+        $this->livreur = $livreur;
+        $this->etat = $etat;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdCommande()
+    {
+        return $this->idCommande;
+    }
+
+    /**
+     * @param int $idCommande
+     */
+    public function setIdCommande($idCommande)
+    {
+        $this->idCommande = $idCommande;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * @param string $total
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdUser()
+    {
+        return $this->idUser;
+    }
+
+    /**
+     * @param string $idUser
+     */
+    public function setIdUser($idUser)
+    {
+        $this->idUser = $idUser;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return string
+     */
+    public function getVille()
+    {
+        return $this->ville;
+    }
+
+    /**
+     * @param string $ville
+     */
+    public function setVille($ville)
+    {
+        $this->ville = $ville;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLivreur()
+    {
+        return $this->livreur;
+    }
+
+    /**
+     * @param string $livreur
+     */
+    public function setLivreur($livreur)
+    {
+        $this->livreur = $livreur;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
+
+    /**
+     * @param string $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+    }
+
+
 
 }
 

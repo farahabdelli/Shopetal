@@ -63,6 +63,142 @@ class Offres
      */
     private $dateAjout;
 
+    /**
+     * Offres constructor.
+     * @param string $id
+     * @param string $categorie
+     * @param string $cible
+     * @param int $taux
+     * @param string $dateDebut
+     * @param string $dateFin
+     * @param string $dateAjout
+     */
+    public function Offres($id, $categorie, $cible, $taux, $dateDebut, $dateFin, $dateAjout)
+    {
+        $this->id = $id;
+        $this->categorie = $categorie;
+        $this->cible = $cible;
+        $this->taux = $taux;
+        $this->dateDebut = $dateDebut;
+        $this->dateFin = $dateFin;
+        $this->dateAjout = $dateAjout;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param string $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCible()
+    {
+        return $this->cible;
+    }
+
+    /**
+     * @param string $cible
+     */
+    public function setCible($cible)
+    {
+        $this->cible = $cible;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTaux()
+    {
+        return $this->taux;
+    }
+
+    /**
+     * @param int $taux
+     */
+    public function setTaux($taux)
+    {
+        $this->taux = $taux;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * @param string $dateDebut
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * @param string $dateFin
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDateAjout()
+    {
+        return $this->dateAjout;
+    }
+
+    /**
+     * @param string $dateAjout
+     */
+    public function setDateAjout($dateAjout)
+    {
+        $this->dateAjout = $dateAjout;
+    }
+
+
+
+
 
 }
 

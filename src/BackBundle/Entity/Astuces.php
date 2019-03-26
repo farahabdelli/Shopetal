@@ -49,6 +49,105 @@ class Astuces
      */
     private $imageAstuce;
 
+    /**
+     * Astuces constructor.
+     * @param int $idAstuce
+     * @param string $titreAstuce
+     * @param string $typeAstuce
+     * @param string $descAstuce
+     * @param string $imageAstuce
+     */
+    public function Astuces($idAstuce, $titreAstuce, $typeAstuce, $descAstuce, $imageAstuce)
+    {
+        $this->idAstuce = $idAstuce;
+        $this->titreAstuce = $titreAstuce;
+        $this->typeAstuce = $typeAstuce;
+        $this->descAstuce = $descAstuce;
+        $this->imageAstuce = $imageAstuce;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdAstuce()
+    {
+        return $this->idAstuce;
+    }
+
+    /**
+     * @param int $idAstuce
+     */
+    public function setIdAstuce($idAstuce)
+    {
+        $this->idAstuce = $idAstuce;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitreAstuce()
+    {
+        return $this->titreAstuce;
+    }
+
+    /**
+     * @param string $titreAstuce
+     */
+    public function setTitreAstuce($titreAstuce)
+    {
+        $this->titreAstuce = $titreAstuce;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTypeAstuce()
+    {
+        return $this->typeAstuce;
+    }
+
+    /**
+     * @param string $typeAstuce
+     */
+    public function setTypeAstuce($typeAstuce)
+    {
+        $this->typeAstuce = $typeAstuce;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescAstuce()
+    {
+        return $this->descAstuce;
+    }
+
+    /**
+     * @param string $descAstuce
+     */
+    public function setDescAstuce($descAstuce)
+    {
+        $this->descAstuce = $descAstuce;
+    }
+
+    /**
+     * @return string
+     */
+    public function getImageAstuce()
+    {
+        return $this->imageAstuce;
+    }
+
+    /**
+     * @param string $imageAstuce
+     */
+    public function setImageAstuce($imageAstuce)
+    {
+        $this->imageAstuce = $imageAstuce;
+    }
+
+
+
 
 }
 

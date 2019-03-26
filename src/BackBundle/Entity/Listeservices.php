@@ -35,6 +35,68 @@ class Listeservices
      */
     private $prixparheureaffiche;
 
+    /**
+     * Listeservices constructor.
+     * @param string $nom
+     * @param float $prixparheure
+     * @param float $prixparheureaffiche
+     */
+    public function Listeservices($nom, $prixparheure, $prixparheureaffiche)
+    {
+        $this->nom = $nom;
+        $this->prixparheure = $prixparheure;
+        $this->prixparheureaffiche = $prixparheureaffiche;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrixparheure()
+    {
+        return $this->prixparheure;
+    }
+
+    /**
+     * @param float $prixparheure
+     */
+    public function setPrixparheure($prixparheure)
+    {
+        $this->prixparheure = $prixparheure;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrixparheureaffiche()
+    {
+        return $this->prixparheureaffiche;
+    }
+
+    /**
+     * @param float $prixparheureaffiche
+     */
+    public function setPrixparheureaffiche($prixparheureaffiche)
+    {
+        $this->prixparheureaffiche = $prixparheureaffiche;
+    }
+
+
 
 }
 
