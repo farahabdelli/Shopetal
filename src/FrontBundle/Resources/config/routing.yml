@@ -4,9 +4,6 @@ front_homepage:
 layout:
     path:     /layout
     defaults: { _controller: FrontBundle:Default:layout }
-afficheM :
-    path:     /afficheM
-    defaults: { _controller: FrontBundle:Produits:afficheM }
-Ajout2:
-    path:     /create2
-    defaults: { _controller: FrontBundle:Produits:create2 }
+afficher_Produit:
+    path:     /afficherProduit
+    defaults: { _controller: FrontBundle:Produit:afficherProduit }
