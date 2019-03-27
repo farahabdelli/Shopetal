@@ -2,7 +2,7 @@
 
 namespace BackBundle\Controller;
 
-use BackBundle\Entity\Commande;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -44,7 +44,12 @@ class CommandeController extends Controller
                 'multiple'=>false,
                 'placeholder' => ' ',
                 'attr' => array('class' => 'form-control')))
-            ->add('etat', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('etat', ChoiceType::class,
+                [
+                'choices' => [
+                    'En cours de traitement', 'En cours de livraison', 'Livrée'],
+
+                'attr' => array('class' => 'form-control')])
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
             ->getForm();
         $form->handleRequest($request);
