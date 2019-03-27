@@ -44,3 +44,15 @@ supprimerCommande :
 modifierCommande :
     path:     /modifierCommande/{id}
     defaults: { _controller: BackBundle:Commande:modifierCommande }
+afficher_Catalogue:
+    path:     /afficherCatalogue
+    defaults: { _controller: BackBundle:Produit:afficherCatalogue }
+ajouter_Produit_Catalogue:
+    path:     /ajouterProduitCatalogue/{id}
+    defaults: { _controller: BackBundle:Produit:ajouterProduitCatalogue }
+supprimerProduitCatalogue :
+    path:     /supprimerProduitCatalogue/{id}
+    defaults: { _controller: BackBundle:Produit:supprimerProduitCatalogue }
+modifierProduitCatalogue :
+    path:     /modifierProduitCatalogue/{id}
+    defaults: { _controller: BackBundle:Produit:modifierProduitCatalogue }

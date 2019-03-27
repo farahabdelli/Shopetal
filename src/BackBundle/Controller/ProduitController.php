@@ -3,6 +3,7 @@
 namespace BackBundle\Controller;
 
 use BackBundle\Entity\Produits;
+use BackBundle\Entity\Catalogue;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -109,4 +110,85 @@ class ProduitController extends Controller
 
 
     }
+
+
+    public function afficherCatalogueAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $modeles=$em->getRepository('BackBundle:Catalogue')->findAll();
+        return $this->render('@Back/Produit/listeCatalogue.html.twig',array('m'=>$modeles));
+    }
+    public function ajouterProduitCatalogueAction($id)
+    {
+        $modeles = $this->getDoctrine()->getRepository('BackBundle:Produits')->find($id);
+        $modele=new Catalogue();
+        $modele->setId($modeles->getId());
+        $modele->setNom($modeles->getNom());
+        $modele->setPrix($modeles->getPrix());
+        $modele->setImage($modeles->getImage());
+        $modele->setQuantite($modeles->getQuantite());
+
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($modele);
+            $em->flush();
+
+
+        return $this->redirectToRoute('afficher_Produit');
+
+
+
+
+    }
+
+
+    public function supprimerProduitCatalogueAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $modele = $em->getRepository('BackBundle:Catalogue')->find($id);
+        $em->remove($modele);
+
+        $em->flush();
+        return $this->redirectToRoute('afficher_Catalogue');
+    }
+
+    public function modifierProduitCatalogueAction(Request $request,$id )
+    {
+        $modeles = $this->getDoctrine()->getRepository('BackBundle:Catalogue')->find($id);
+
+        $modeles->setPrix($modeles->getPrix());
+        $modeles->setQuantite($modeles->getQuantite());
+        $form=$this->createFormBuilder($modeles)
+
+            ->add('prix', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('quantite', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
+            ->getForm();
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            $prix = $form['prix']->getData();
+            $quantite = $form['quantite']->getData();
+
+
+
+
+
+            $em=$this->getDoctrine()->getRepository('BackBundle:Produits')->find($id);
+
+
+            $modeles->setPrix($prix);
+            $modeles->setQuantite($quantite);
+            $em=$this->getDoctrine()->getManager();
+            $em->flush();
+            $this->addFlash('message', 'modifié avec succès');
+            return $this->redirectToRoute('afficher_Catalogue');
+        }
+        return $this->render('@Back/Produit/modifierProduit.html.twig', [
+
+            'form' => $form->createView()
+        ]);
+    }
+
+
 }

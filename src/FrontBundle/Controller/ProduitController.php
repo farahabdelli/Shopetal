@@ -9,10 +9,10 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ProduitController extends Controller
 {
-    public function afficherProduitAction()
+    public function afficherCatalogueAction()
     {
         $em=$this->getDoctrine()->getManager();
-        $modeles=$em->getRepository('BackBundle:Produits')->findAll();
+        $modeles=$em->getRepository('BackBundle:Catalogue')->findAll();
 
 
 

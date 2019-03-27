@@ -1,0 +1,50 @@
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+    <td><a href={{path('afficher_Produit')}}>Ajouter un Produit au catalogue</a></td>
+    <br><br>
+
+
+    <h2>Liste des Produits Dans le catalogue</h2>
+    <br><br>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>image</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+        {% for i in m %}
+            <tr>
+                <!-- for i in m -->
+                <td>{{ i.id }}</td>
+                <td>{{ i.nom }}</td>
+                <td>{{ i.prix }}</td>
+
+                <td>{{ i.quantite }}</td>
+                <td>{{ i.image }}</td>
+
+
+
+
+
+                <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerProduitCatalogue/{{ i.id }}" class="btn btn-danger" >Supprimer</a> </td>
+                <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierProduitCatalogue/{{ i.id }}" class="btn btn-warning" >Modifier</a> </td>
+
+            </tr>
+        {% endfor %}
+
+
+
+        </tbody>
+    </table>
+
+{% endblock %}

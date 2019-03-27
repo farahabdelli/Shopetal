@@ -3,6 +3,8 @@
 {% block main %}
 
     <td><a href={{path('ajouter_Produit')}}>Ajouter un Produit</a></td>
+    <br>
+    <td><a href={{path('afficher_Catalogue')}}>consulter catalogue</a></td>
     <br><br>
 
 
@@ -41,7 +43,7 @@
 
 
 
-
+                <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/ajouterProduitCatalogue/{{ i.id }}" class="btn btn-primary" >ajouter au catalogue</a> </td>
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerProduit/{{ i.id }}" class="btn btn-danger" >Supprimer</a> </td>
                 <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierProduit/{{ i.id }}" class="btn btn-warning" >Modifier</a> </td>
            
