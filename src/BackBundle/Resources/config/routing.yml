@@ -56,3 +56,16 @@ supprimerProduitCatalogue :
 modifierProduitCatalogue :
     path:     /modifierProduitCatalogue/{id}
     defaults: { _controller: BackBundle:Produit:modifierProduitCatalogue }
+
+ajouter_jardinier:
+    path:     /ajouterJardinier
+    defaults: { _controller: BackBundle:Jardinier:ajouterJardinier }
+afficher_jardinier:
+    path:     /afficherJardinier
+    defaults: { _controller: BackBundle:Jardinier:afficherJardinier }
+supprimerJardinier :
+    path:     /supprimerJardinier/{id}
+    defaults: { _controller: BackBundle:Jardinier:supprimerJardinier }
+modifierJardinier :
+    path:     /modifierJardinier/{id}
+    defaults: { _controller: BackBundle:Jardinier:modifierJardinier }

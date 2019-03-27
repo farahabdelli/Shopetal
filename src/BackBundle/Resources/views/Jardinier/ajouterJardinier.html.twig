@@ -1,0 +1,31 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+<h2>Ajouter un Jardinier</h2>
+    <br><br>
+<form method="POST">
+
+        <tr>
+            <td>Nom </td>
+            <td><input type="text" class="form-control input-default " name="nom"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Prenom</td>
+            <td><input type="text" class="form-control input-default " name="prenom"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Téléphone</td>
+            <td><input type="number" class="form-control input-default " name="numero"></td>
+        </tr><br/><br/>
+
+
+        <tr>
+
+            <td><center><input type="submit" class="btn btn-default" value="Ajouter"></center></td><br/><br/>
+        </tr>
+
+
+</form>
+
+{% endblock %}
