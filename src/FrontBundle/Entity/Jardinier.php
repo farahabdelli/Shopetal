@@ -54,7 +54,124 @@ class Jardinier
      *
      * @ORM\Column(name="disponibilite", type="integer", nullable=false)
      */
-    private $disponibilite;
+    private $disponibilite = '1';
+
+    /**
+     * Jardinier constructor.
+     * @param int $id
+     * @param string $nom
+     * @param string $prenom
+     * @param string $adresse
+     * @param int $numero
+     * @param int $disponibilite
+     */
+    public function Jardinier($id, $nom, $prenom, $adresse, $numero, $disponibilite)
+    {
+        $this->id = $id;
+        $this->nom = $nom;
+        $this->prenom = $prenom;
+        $this->adresse = $adresse;
+        $this->numero = $numero;
+        $this->disponibilite = $disponibilite;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
+     * @return int
+     */
+    public function getNumero()
+    {
+        return $this->numero;
+    }
+
+    /**
+     * @param int $numero
+     */
+    public function setNumero($numero)
+    {
+        $this->numero = $numero;
+    }
+
+    /**
+     * @return int
+     */
+    public function getDisponibilite()
+    {
+        return $this->disponibilite;
+    }
+
+    /**
+     * @param int $disponibilite
+     */
+    public function setDisponibilite($disponibilite)
+    {
+        $this->disponibilite = $disponibilite;
+    }
+
+
 
 
 }

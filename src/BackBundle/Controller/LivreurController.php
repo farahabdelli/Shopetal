@@ -1,7 +1,7 @@
 <?php
 
 namespace BackBundle\Controller;
-
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use BackBundle\Entity\Livreur;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -34,7 +34,12 @@ class LivreurController extends Controller
             ->add('nomLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('mailLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('telLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('disponibilite', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('disponibilite', ChoiceType::class,
+                [
+                    'choices' => [
+                        'Non disponible', 'Disponible'],
+
+                    'attr' => array('class' => 'form-control')])
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
             ->getForm();
         $form->handleRequest($request);
