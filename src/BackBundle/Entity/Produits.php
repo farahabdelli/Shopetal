@@ -5,7 +5,7 @@ namespace BackBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Produits
+ * Produit
  *
  * @ORM\Table(name="produits")
  * @ORM\Entity
@@ -71,7 +71,7 @@ class Produits
     private $type;
 
     /**
-     * Produits constructor.
+     * Produit constructor.
      * @param int $id
      * @param string $nom
      * @param float $prix
