@@ -49,6 +49,104 @@ class Lignecommande
      */
     private $quantiteLignecommande;
 
+    /**
+     * Lignecommande constructor.
+     * @param int $idLignecommande
+     * @param int $idProduit
+     * @param string $nomProduit
+     * @param float $prixProduit
+     * @param int $quantiteLignecommande
+     */
+    public function Lignecommande($idLignecommande, $idProduit, $nomProduit, $prixProduit, $quantiteLignecommande)
+    {
+        $this->idLignecommande = $idLignecommande;
+        $this->idProduit = $idProduit;
+        $this->nomProduit = $nomProduit;
+        $this->prixProduit = $prixProduit;
+        $this->quantiteLignecommande = $quantiteLignecommande;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdLignecommande()
+    {
+        return $this->idLignecommande;
+    }
+
+    /**
+     * @param int $idLignecommande
+     */
+    public function setIdLignecommande($idLignecommande)
+    {
+        $this->idLignecommande = $idLignecommande;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdProduit()
+    {
+        return $this->idProduit;
+    }
+
+    /**
+     * @param int $idProduit
+     */
+    public function setIdProduit($idProduit)
+    {
+        $this->idProduit = $idProduit;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNomProduit()
+    {
+        return $this->nomProduit;
+    }
+
+    /**
+     * @param string $nomProduit
+     */
+    public function setNomProduit($nomProduit)
+    {
+        $this->nomProduit = $nomProduit;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrixProduit()
+    {
+        return $this->prixProduit;
+    }
+
+    /**
+     * @param float $prixProduit
+     */
+    public function setPrixProduit($prixProduit)
+    {
+        $this->prixProduit = $prixProduit;
+    }
+
+    /**
+     * @return int
+     */
+    public function getQuantiteLignecommande()
+    {
+        return $this->quantiteLignecommande;
+    }
+
+    /**
+     * @param int $quantiteLignecommande
+     */
+    public function setQuantiteLignecommande($quantiteLignecommande)
+    {
+        $this->quantiteLignecommande = $quantiteLignecommande;
+    }
+
+
 
 }
 

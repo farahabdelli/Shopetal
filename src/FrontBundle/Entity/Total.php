@@ -28,6 +28,50 @@ class Total
      */
     private $total;
 
+    /**
+     * Total constructor.
+     * @param int $idTot
+     * @param string $total
+     */
+    public function Total($idTot, $total)
+    {
+        $this->idTot = $idTot;
+        $this->total = $total;
+    }
+
+    /**
+     * @return int
+     */
+    public function getIdTot()
+    {
+        return $this->idTot;
+    }
+
+    /**
+     * @param int $idTot
+     */
+    public function setIdTot($idTot)
+    {
+        $this->idTot = $idTot;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTotal()
+    {
+        return $this->total;
+    }
+
+    /**
+     * @param string $total
+     */
+    public function setTotal($total)
+    {
+        $this->total = $total;
+    }
+
+
 
 }
 
