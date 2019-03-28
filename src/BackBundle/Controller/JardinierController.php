@@ -3,6 +3,7 @@
 namespace BackBundle\Controller;
 
 use BackBundle\Entity\Jardinier;
+use BackBundle\Form\JardinierType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -22,7 +23,23 @@ class JardinierController extends Controller
         $em->flush();
         return $this->redirectToRoute('afficher_jardinier');
     }
+    public function modifierJardinierAction(Request $request,$id)
+    {
+        $em=$this->getDoctrine()->getManager();
 
+        $m=$em->getRepository('BackBundle:Jardinier')->find($id);
+
+        $Form = $this->createForm(JardinierType::class,$m);
+        $Form->handleRequest($request);
+        if ($Form->isSubmitted()){
+            $em=$this->getDoctrine()->getManager();
+            $em->persist($m);
+            $em->flush();
+        }
+        return $this->render('@Back\Jardinier\modifJardinier.html.twig',array('form'=>$Form->createView()));
+
+
+    }
 
 
     public function afficherJardinierAction()
