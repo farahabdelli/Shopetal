@@ -34,4 +34,19 @@ supprimerPanier :
     path:     /supprimerPanier/{id}
     defaults: { _controller: FrontBundle:Panier:supprimerPanier }
 
+afficherFavoris:
+    path:     /afficherFavoris
+    defaults: { _controller: FrontBundle:Favoris:afficherFavoris }
+
+addtofavoris:
+    path:     /addtofavoris/{id}
+    defaults: { _controller: FrontBundle:Favoris:addtofavoris }
+
+modifierFavoris :
+    path:     /modifierFavoris/{id}
+    defaults: { _controller: FrontBundle:Favoris:modifierFavoris }
+
+supprimerFavoris :
+    path:     /supprimerFavoris/{id}
+    defaults: { _controller: FrontBundle:Favoris:supprimerFavoris }
 

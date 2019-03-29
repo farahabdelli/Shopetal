@@ -1,0 +1,44 @@
+
+{% extends 'base2.html.twig' %}
+
+{% block Panier %}
+
+    <h3>Mes favories</h3>
+
+<br><br>
+
+    {% for i in emm %}
+        <div class="row isotope-grid">
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+                <!-- Block2 -->
+
+
+
+                <div class="block2">
+                    <div class="block2-pic hov-img0">
+                        <img src="{{ asset(i.imageProduit) }}" alt="IMG-PRODUCT">
+
+
+                    </div>
+
+                    <div class="block2-txt flex-w flex-t p-t-14">
+                        <div class="block2-txt-child1 flex-col-l ">
+                            <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                {{ i.nomProduit }}
+                            </a>
+
+                            <span class="stext-105 cl3">
+									{{ i.prixProduit }} TND
+								</span>
+                        </div>
+                        <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/supprimerFavoris/{{ i.idFavoris }}" class="zmdi zmdi-delete" ></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock %}
