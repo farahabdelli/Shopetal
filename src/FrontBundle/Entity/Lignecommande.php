@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Lignecommande
  *
  * @ORM\Table(name="lignecommande")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="FrontBundle\Repository\PanierRepository")
  */
 class Lignecommande
 {

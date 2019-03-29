@@ -7,3 +7,31 @@ layout:
 afficherCatalogue:
     path:     /afficherCatalogue
     defaults: { _controller: FrontBundle:Produit:afficherCatalogue }
+
+
+afficherPanier:
+    path:     /afficherPanier
+    defaults: { _controller: FrontBundle:Panier:afficherPanier }
+
+DQLtotal:
+    path:     /DQL
+    defaults: {_controller: FrontBundle:Panier:DQLtotal }
+
+QBtotal:
+    path:     /QB
+    defaults: {_controller: FrontBundle:Panier:QBtotal }
+
+
+addtocart:
+    path:     /addtocart/{id}
+    defaults: { _controller: FrontBundle:Panier:addtocart }
+
+modifierPanier :
+    path:     /modifierPanier/{id}
+    defaults: { _controller: FrontBundle:Panier:modifierPanier }
+
+supprimerPanier :
+    path:     /supprimerPanier/{id}
+    defaults: { _controller: FrontBundle:Panier:supprimerPanier }
+
+
