@@ -50,20 +50,30 @@ class Lignecommande
     private $quantiteLignecommande;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="prix_panier", type="float", precision=10, scale=0, nullable=false)
+     */
+    private $prixPanier;
+
+
+    /**
      * Lignecommande constructor.
      * @param int $idLignecommande
      * @param int $idProduit
      * @param string $nomProduit
      * @param float $prixProduit
      * @param int $quantiteLignecommande
+     * @param float $prixPanier
      */
-    public function Lignecommande($idLignecommande, $idProduit, $nomProduit, $prixProduit, $quantiteLignecommande)
+    public function Lignecommande($idLignecommande, $idProduit, $nomProduit, $prixProduit, $quantiteLignecommande,$prixPanier)
     {
         $this->idLignecommande = $idLignecommande;
         $this->idProduit = $idProduit;
         $this->nomProduit = $nomProduit;
         $this->prixProduit = $prixProduit;
         $this->quantiteLignecommande = $quantiteLignecommande;
+        $this->prixPanier = $prixPanier;
     }
 
     /**
@@ -145,6 +155,23 @@ class Lignecommande
     {
         $this->quantiteLignecommande = $quantiteLignecommande;
     }
+
+    /**
+     * @return float
+     */
+    public function getPrixPanier()
+    {
+        return $this->prixPanier;
+    }
+
+    /**
+     * @param float $prixPanier
+     */
+    public function setPrixPanier($prixPanier)
+    {
+        $this->prixPanier = $prixPanier;
+    }
+
 
 
 

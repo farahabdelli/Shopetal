@@ -17,10 +17,6 @@ DQLtotal:
     path:     /DQL
     defaults: {_controller: FrontBundle:Panier:DQLtotal }
 
-QBtotal:
-    path:     /QB
-    defaults: {_controller: FrontBundle:Panier:QBtotal }
-
 
 addtocart:
     path:     /addtocart/{id}
@@ -41,10 +37,6 @@ afficherFavoris:
 addtofavoris:
     path:     /addtofavoris/{id}
     defaults: { _controller: FrontBundle:Favoris:addtofavoris }
-
-modifierFavoris :
-    path:     /modifierFavoris/{id}
-    defaults: { _controller: FrontBundle:Favoris:modifierFavoris }
 
 supprimerFavoris :
     path:     /supprimerFavoris/{id}
