@@ -1,0 +1,44 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+<h2>Ajouter une offre</h2>
+    <br><br>
+<form method="POST">
+
+        <tr>
+            <td> ID:</td>
+            <td><input type="text" class="form-control input-default " name="id"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Categorie:</td>
+            <td><input type="text" class="form-control input-default " name="categorie"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Cible:</td>
+            <td><input type="text" class="form-control input-default " name="cible"></td>
+        </tr><br/><br/>
+        <tr>
+            <td>Taux:</td>
+            <td><input type="number" class="form-control input-default " name="taux"></td>
+        </tr><br/><br/>
+
+        <tr>
+            <td>Date debut:</td>
+            <td><input type="date" class="form-control input-default " name="dateDebut"></td>
+        </tr><br/><br/>
+
+        <tr>
+            <td>Date fin:</td>
+            <td><input type="date" class="form-control input-default " name="dateFin"></td>
+        </tr><br/><br/>
+
+        <tr>
+
+            <td><center><input type="submit" class="btn btn-default" value="Ajouter"></center></td><br/><br/>
+        </tr>
+
+
+</form>
+
+{% endblock %}
