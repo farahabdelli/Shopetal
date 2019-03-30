@@ -3,6 +3,7 @@
 namespace BackBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Offre
@@ -42,16 +43,18 @@ class Offres
     private $taux;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="date_debut", type="string", length=30, nullable=true)
+     * @ORM\Column(name="date_debut", type="datetime", length=30, nullable=true)
+     * @Assert\Date()
      */
     private $dateDebut;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="date_fin", type="string", length=30, nullable=true)
+     * @ORM\Column(name="date_fin", type="datetime", length=30, nullable=true)
+     * @Assert\DateTime()
      */
     private $dateFin;
 
@@ -68,8 +71,8 @@ class Offres
      * @param string $categorie
      * @param string $cible
      * @param int $taux
-     * @param string $dateDebut
-     * @param string $dateFin
+     * @param \DateTime $dateDebut
+     * @param \DateTime $dateFin
      * @param string $dateAjout
      */
     public function Offres($id, $categorie, $cible, $taux, $dateDebut, $dateFin, $dateAjout)
@@ -148,7 +151,7 @@ class Offres
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDateDebut()
     {
@@ -156,15 +159,15 @@ class Offres
     }
 
     /**
-     * @param string $dateDebut
+     * @param \DateTime $dateDebut
      */
     public function setDateDebut($dateDebut)
     {
-        $this->dateDebut = $dateDebut;
+        $this->dateDebut =(new \DateTime($dateDebut));
     }
 
     /**
-     * @return string
+     * @return \DateTime
      */
     public function getDateFin()
     {
@@ -172,11 +175,11 @@ class Offres
     }
 
     /**
-     * @param string $dateFin
+     * @param \DateTime $dateFin
      */
     public function setDateFin($dateFin)
     {
-        $this->dateFin = $dateFin;
+        $this->dateFin = (new \DateTime($dateFin));
     }
 
     /**

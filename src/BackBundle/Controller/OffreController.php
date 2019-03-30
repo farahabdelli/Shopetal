@@ -51,12 +51,10 @@ class OffreController extends Controller
             ->add('categorie', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('cible', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('taux', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('dateDebut', DateType::class,  [
-                'widget' => 'single_text',
-                // this is actually the default format for single_text
-                'format' => 'yyyy-MM-dd',
-            ])
-            ->add('dateFin', DateType::class, array('attr' => array('class' => 'form-control')))
+            ->add('dateDebut', DateType::class,array('label' => 'dateDebut', 'widget' => 'single_text', 'html5' => false,
+                'attr' => array('class' => 'form-control')))
+            ->add('dateFin', DateType::class,array('label' => 'dateFin', 'widget' => 'single_text', 'html5' => false,
+                'attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
             ->getForm();
         $form->handleRequest($request);
@@ -72,7 +70,7 @@ class OffreController extends Controller
 
 
 
-            $em=$this->getDoctrine()->getRepository('BackBundle:Offre')->find($id);
+            $em=$this->getDoctrine()->getRepository('BackBundle:Offres')->find($id);
 
 
 

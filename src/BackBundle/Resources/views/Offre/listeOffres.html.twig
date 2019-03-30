@@ -30,8 +30,9 @@
             <td>{{ i.id}}</td>
             <td>{{ i.categorie}}</td>
             <td>{{ i.cible }}</td>
-            <td>{{ i.dateDebut }}</td>
-            <td>{{ i.dateFin }}</td>
+            <td>{{ i.taux }}</td>
+            <td>{{ i.dateDebut |date }}</td>
+            <td>{{ i.dateFin |date }}</td>
 
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerOffre/{{ i.id }}" class="btn btn-danger" >Supprimer</a> </td>
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierOffre/{{ i.id }}" class="btn btn-warning" >Modifier</a> </td>
