@@ -1,0 +1,34 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+<h2>Ajouter un coupon</h2>
+    <br><br>
+<form method="POST">
+
+        <tr>
+            <td>Code coupon:</td>
+            <td><input type="text" class="form-control input-default " name="vouchercode"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Nombre d'utilisations:</td>
+            <td><input type="number" class="form-control input-default " name="nbuse"></td><br/><br/>
+        </tr>
+        <tr>
+            <td>Nombre max d'util:</td>
+            <td><input type="number" class="form-control input-default " name="maxuse"></td>
+        </tr><br/><br/>
+        <tr>
+            <td>taux:</td>
+            <td><input type="number" class="form-control input-default " name="rate"></td>
+        </tr><br/><br/>
+
+        <tr>
+
+            <td><center><input type="submit" class="btn btn-default" value="Ajouter"></center></td><br/><br/>
+        </tr>
+
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+    <td><a href="{{path('ajouterVoucher')}}" class="btn btn-primary">Ajouter un coupon</a></td>
+    <br><br>
+
+<h2>Liste des coupons</h2>
+    <br><br>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+
+            <th>Code coupon</th>
+            <th>nombre d'utilisations</th>
+            <th>nombre d'util. maximum</th>
+            <th>Taux</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+
+            {% for i in m %}
+        <tr>
+
+            <td>{{ i.vouchercode}}</td>
+            <td>{{ i.nbuse}}</td>
+            <td>{{ i.maxuse }}</td>
+            <td>{{ i.rate }}</td>
+
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerVoucher/{{ i.vouchercode }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierVoucher/{{ i.vouchercode }}" class="btn btn-warning" >Modifier</a> </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}
