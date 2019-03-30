@@ -69,3 +69,28 @@ supprimerJardinier :
 modifierJardinier :
     path:     /modifierJardinier/{id}
     defaults: { _controller: BackBundle:Jardinier:modifierJardinier }
+afficherVoucher :
+    path:     /afficherVoucher
+    defaults: { _controller: BackBundle:Voucher:afficherVoucher }
+supprimerVoucher :
+    path:     /supprimerVoucher/{vouchercode}
+    defaults: { _controller: BackBundle:Voucher:supprimerVoucher }
+modifierVoucher :
+    path:     /modifierVoucher/{vouchercode}
+    defaults: { _controller: BackBundle:Voucher:modifierVoucher }
+ajouterVoucher :
+    path:     /ajouterVoucher
+    defaults: { _controller: BackBundle:Voucher:ajouterVoucher }
+
+afficherOffre :
+    path:     /afficherOffre
+    defaults: { _controller: BackBundle:Offre:afficherOffre }
+supprimerOffre :
+    path:     /supprimerOffre/{id}
+    defaults: { _controller: BackBundle:Offre:supprimerOffre }
+modifierOffre :
+    path:     /modifierOffre/{id}
+    defaults: { _controller: BackBundle:Offre:modifierOffre }
+ajouterOffre :
+    path:     /ajouterOffre
+    defaults: { _controller: BackBundle:Offre:ajouterOffre }

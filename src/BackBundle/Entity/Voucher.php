@@ -17,7 +17,6 @@ class Voucher
      *
      * @ORM\Column(name="voucherCode", type="string", length=6, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $vouchercode;
 

@@ -5,7 +5,7 @@ namespace BackBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Offres
+ * Offre
  *
  * @ORM\Table(name="offres")
  * @ORM\Entity
@@ -17,7 +17,6 @@ class Offres
      *
      * @ORM\Column(name="id", type="string", length=8, nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
@@ -64,7 +63,7 @@ class Offres
     private $dateAjout;
 
     /**
-     * Offres constructor.
+     * Offre constructor.
      * @param string $id
      * @param string $categorie
      * @param string $cible
