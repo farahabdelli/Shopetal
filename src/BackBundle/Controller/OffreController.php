@@ -44,8 +44,8 @@ class OffreController extends Controller
         $modeles->setCategorie($modeles->getCategorie());
         $modeles->setCible($modeles->getCible());
         $modeles->setTaux($modeles->getTaux());
-        $modeles->setDateDebut($modeles->getDateDebut());
-        $modeles->setDateFin($modeles->getDateFin());
+        $modeles->setDateDebut2($modeles->getDateDebut());
+        $modeles->setDateFin2($modeles->getDateFin());
         $form=$this->createFormBuilder($modeles)
             ->add('id', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('categorie', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -78,8 +78,8 @@ class OffreController extends Controller
             $modeles->setCategorie($categorie);
             $modeles->setCible($cible);
             $modeles->setTaux($taux);
-            $modeles->setDateDebut($dateDebut);
-            $modeles->setDateFin($dateFin);
+            $modeles->setDateDebut2($dateDebut);
+            $modeles->setDateFin2($dateFin);
 
             $em=$this->getDoctrine()->getManager();
             $em->flush();
