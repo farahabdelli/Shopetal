@@ -127,7 +127,7 @@ class ProduitController extends Controller
         $modele->setPrix($modeles->getPrix());
         $modele->setImage($modeles->getImage());
         $modele->setQuantite($modeles->getQuantite());
-
+        $modele->setCategorie($modeles->getCategorie());
             $em=$this->getDoctrine()->getManager();
             $em->persist($modele);
             $em->flush();

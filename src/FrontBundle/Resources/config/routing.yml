@@ -41,4 +41,12 @@ addtofavoris:
 supprimerFavoris :
     path:     /supprimerFavoris/{id}
     defaults: { _controller: FrontBundle:Favoris:supprimerFavoris }
-
+rechercherCatalogue:
+    path:     /rechercherCatalogue
+    defaults: { _controller: FrontBundle:Produit:rechercherCatalogue }
+afficherCategorieFleur:
+    path:     /afficherCategorieFleur
+    defaults: { _controller: FrontBundle:Produit:afficherCategorieFleur }
+afficherCategoriePlantes:
+    path:     /afficherCategoriePlantes
+    defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
