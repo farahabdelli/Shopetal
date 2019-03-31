@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0685242-5bd1-4179-9236-927aaeee7c27" name="Default Changelist" comment="crud Favoris frontend #farah">
-      <change afterPath="$PROJECT_DIR$/src/FrontBundle/Repository/ProduitRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/RechercherProduit.html.twig" afterDir="false" />
+    <list default="true" id="c0685242-5bd1-4179-9236-927aaeee7c27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackBundle/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackBundle/Entity/Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Entity/Catalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Entity/Catalogue.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Entity/Catalogue.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -126,11 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="412" column="26" selection-start-line="412" selection-start-column="22" selection-end-line="412" selection-end-column="26" />
-              <folding>
-                <element signature="e#14209#14233#0#Twig" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="404" selection-start-line="404" selection-end-line="404" />
             </state>
           </provider>
         </entry>
@@ -233,9 +222,9 @@
         <option value="$PROJECT_DIR$/src/FrontBundle/Entity/Catalogue.php" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/src/BackBundle/Controller/ProduitController.php" />
         <option value="$PROJECT_DIR$/src/BackBundle/Entity/Catalogue.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       </list>
     </option>
   </component>
@@ -282,7 +271,7 @@
       <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -466,7 +455,7 @@
       <workItem from="1553866342160" duration="16519000" />
       <workItem from="1553943061955" duration="6513000" />
       <workItem from="1553952252963" duration="444000" />
-      <workItem from="1554026701299" duration="7522000" />
+      <workItem from="1554026701299" duration="8474000" />
     </task>
     <task id="LOCAL-00001" summary="modification frontend #farah">
       <created>1553780695833</created>
@@ -517,17 +506,24 @@
       <option name="project" value="LOCAL" />
       <updated>1553870571571</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Rechercher et trier avec catégoie#Akthem">
+      <created>1554035147454</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1554035147454</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77950000" />
+    <option name="totallyTimeSpent" value="78902000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25037822" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -538,7 +534,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.15136877" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.55716586" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Command Line Tools Console" order="10" weight="0.6350711" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -554,6 +550,8 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="modification frontend #farah" />
     <MESSAGE value="Modification frontend #farah" />
     <MESSAGE value="Base2 frontend #farah" />
@@ -561,7 +559,8 @@
     <MESSAGE value="base2.html.twig frontend #farah" />
     <MESSAGE value="crud Panier frontend #farah" />
     <MESSAGE value="crud Favoris frontend #farah" />
-    <option name="LAST_COMMIT_MESSAGE" value="crud Favoris frontend #farah" />
+    <MESSAGE value="Rechercher et trier avec catégoie#Akthem" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rechercher et trier avec catégoie#Akthem" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/FrontBundle/Entity/Total.php">
@@ -822,11 +821,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="412" column="26" selection-start-line="412" selection-start-column="22" selection-end-line="412" selection-end-column="26" />
-          <folding>
-            <element signature="e#14209#14233#0#Twig" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="404" selection-start-line="404" selection-end-line="404" />
         </state>
       </provider>
     </entry>
