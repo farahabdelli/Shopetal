@@ -9,8 +9,8 @@
         <thead>
         <tr>
 
+            <th>N°=</th>
             <th>Total</th>
-            <th>User</th>
             <th>Adressse</th>
             <th>Ville</th>
             <th>Livreur</th>
@@ -23,8 +23,8 @@
         {% for i in m %}
             <tr>
 
+                <td>{{ i.idCommande }} </td>
                 <td>{{ i.total }} TND </td>
-                <td>{{ i.idUser}}</td>
                 <td>{{ i.adresse }}</td>
                 <td>{{ i.ville }}</td>
                 <td>{{ i.Livreur.nomLivreur }}</td>

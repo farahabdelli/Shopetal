@@ -6,6 +6,9 @@ use FrontBundle\Entity\Commande;
 use FrontBundle\Entity\Total;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 
 class PanierController extends Controller
@@ -29,7 +32,7 @@ class PanierController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $product = $this->getDoctrine()->getRepository('FrontBundle:Produits')
+        $product = $this->getDoctrine()->getRepository('FrontBundle:Catalogue')
             ->find($id);
         $product->setQuantite($product->getQuantite()-1);
         $cart->setIdProduit($product->getId());
@@ -94,19 +97,35 @@ class PanierController extends Controller
         $em->persist($total);
 
         $com = new Commande();
-        if($request->isMethod('POST')){
-            $com->setTotal($modele);
-            $com->setIdUser("user");
-            $com->setAdresse($request->get('adresse'));
-            $com->setVille($request->get('ville'));
-            $com->setLivreur("-");
-            $com->setEtat(' ');
+        $com->setTotal($modele);
+        $com->setIdUser("user");
+        $com->setEtat(' ');
 
+
+        $form=$this->createFormBuilder($com)
+            ->add('adresse', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('ville', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('livreur', EntityType::class,array(
+                'class' =>'FrontBundle:Livreur',
+                'choice_label'=>'nomLivreur',
+                'multiple'=>false,
+                'label'=>false,
+                'attr' => array('class' => 'invisible')))
+            ->add('save', SubmitType::class, array('label' => 'Valider', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            $em = $this->getDoctrine()->getManager();
             $em->persist($com);
             $em->flush();
             return $this->redirectToRoute('afficherCatalogue');
+
         }
-        return $this->render('@Front/Commande/ajouterCommande.html.twig');
+        return $this->render('@Front/Commande/ajouterCommande.html.twig',  [
+
+            'form2' => $form->createView()
+        ]);
 
 
     }
