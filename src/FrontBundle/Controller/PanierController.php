@@ -79,7 +79,7 @@ class PanierController extends Controller
         $panier->setPrixPanier($panier->getPrixPanier()-$panier->getPrixProduit());
 
         $em->flush();
-        $this->addFlash('message', 'Panier modifié avec succès');
+        $this->addFlash('messages', 'Panier modifié avec succès');
         return $this->redirectToRoute('afficherPanier');
     }
 

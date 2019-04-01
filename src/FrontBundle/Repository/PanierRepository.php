@@ -21,8 +21,8 @@ class PanierRepository extends \Doctrine\ORM\EntityRepository
     }
     public function totalDQL(){
         $query=$this->getEntityManager()->createQuery("SELECT SUM( t.prixPanier) As total from FrontBundle:Lignecommande t ");
-        $t= $query->execute();
-        return $t;
+        return $query->execute();
+
 
     }
 

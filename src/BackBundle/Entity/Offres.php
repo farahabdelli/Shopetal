@@ -206,6 +206,7 @@ class Offres
         return $this->dateAjout;
     }
 
+
     /**
      * @param string $dateAjout
      */

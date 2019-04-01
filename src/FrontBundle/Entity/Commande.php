@@ -177,7 +177,7 @@ class Commande
     }
 
     /**
-     * @param string $livreur
+     * @param string
      */
     public function setLivreur($livreur)
     {

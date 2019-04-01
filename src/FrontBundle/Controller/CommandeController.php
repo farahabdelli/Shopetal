@@ -14,6 +14,8 @@ class CommandeController extends Controller
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('FrontBundle:Commande')->findAll();
 
+
+
         return $this->render('@Front/Commande/afficherCommande.html.twig',array('m'=>$modeles));
     }
 

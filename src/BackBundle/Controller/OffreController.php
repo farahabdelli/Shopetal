@@ -19,6 +19,7 @@ class OffreController extends Controller
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
+
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
@@ -108,7 +109,6 @@ class OffreController extends Controller
     {
         $modele=new Offres();
         if($request->isMethod('POST')){
-           // $modele->setIdLivreur($request->get('idLivreur'));
             $modele->setId($request->get('id'));
             $modele->setCategorie($request->get('categorie'));
             $modele->setCible($request->get('cible'));
