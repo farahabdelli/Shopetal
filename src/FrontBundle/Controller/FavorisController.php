@@ -24,7 +24,7 @@ class FavorisController extends Controller
 
         $em = $this->getDoctrine()->getManager();
 
-        $product = $this->getDoctrine()->getRepository('FrontBundle:Produits')
+        $product = $this->getDoctrine()->getRepository('FrontBundle:Catalogue')
             ->find($id);
 
         $fav->setIdProduit($product->getId());

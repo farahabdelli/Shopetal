@@ -167,6 +167,14 @@ class Offres
     }
 
     /**
+     * @param \DateTime $dateDebut
+     */
+    public function setDateDebut2($dateDebut)
+    {
+        $this->dateDebut =$dateDebut;
+    }
+
+    /**
      * @return \DateTime
      */
     public function getDateFin()
@@ -183,12 +191,21 @@ class Offres
     }
 
     /**
+     * @param \DateTime $dateFin
+     */
+    public function setDateFin2($dateFin)
+    {
+        $this->dateFin = $dateFin;
+    }
+
+    /**
      * @return string
      */
     public function getDateAjout()
     {
         return $this->dateAjout;
     }
+
 
     /**
      * @param string $dateAjout

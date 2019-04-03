@@ -136,6 +136,7 @@ class Livreur
     public function getDisponibilite()
     {
         return $this->disponibilite;
+
     }
 
     /**

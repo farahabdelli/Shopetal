@@ -48,6 +48,12 @@ class Catalogue
      * @ORM\Column(name="quantite", type="integer", nullable=false)
      */
     private $quantite;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="categorie", type="string", length=100, nullable=false)
+     */
+    private $categorie;
 
     /**
      * Catalogue constructor.
@@ -56,14 +62,16 @@ class Catalogue
      * @param int $prix
      * @param string $image
      * @param int $quantite
+     * @param string $categorie
      */
-    public function Catalogue($id, $nom, $prix, $image, $quantite)
+    public function Catalogue($id, $nom, $prix, $image, $quantite,$categorie)
     {
         $this->id = $id;
         $this->nom = $nom;
         $this->prix = $prix;
         $this->image = $image;
         $this->quantite = $quantite;
+        $this->categorie=$categorie;
     }
 
     /**
@@ -144,6 +152,22 @@ class Catalogue
     public function setQuantite($quantite)
     {
         $this->quantite = $quantite;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
+    }
+
+    /**
+     * @param string $categorie
+     */
+    public function setCategorie($categorie)
+    {
+        $this->categorie = $categorie;
     }
 
 
