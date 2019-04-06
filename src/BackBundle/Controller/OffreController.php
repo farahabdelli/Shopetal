@@ -19,6 +19,7 @@ class OffreController extends Controller
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
+
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
@@ -44,8 +45,8 @@ class OffreController extends Controller
         $modeles->setCategorie($modeles->getCategorie());
         $modeles->setCible($modeles->getCible());
         $modeles->setTaux($modeles->getTaux());
-        $modeles->setDateDebut($modeles->getDateDebut());
-        $modeles->setDateFin($modeles->getDateFin());
+        $modeles->setDateDebut2($modeles->getDateDebut());
+        $modeles->setDateFin2($modeles->getDateFin());
         $form=$this->createFormBuilder($modeles)
             ->add('id', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('categorie', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -78,8 +79,8 @@ class OffreController extends Controller
             $modeles->setCategorie($categorie);
             $modeles->setCible($cible);
             $modeles->setTaux($taux);
-            $modeles->setDateDebut($dateDebut);
-            $modeles->setDateFin($dateFin);
+            $modeles->setDateDebut2($dateDebut);
+            $modeles->setDateFin2($dateFin);
 
             $em=$this->getDoctrine()->getManager();
             $em->flush();
@@ -108,7 +109,6 @@ class OffreController extends Controller
     {
         $modele=new Offres();
         if($request->isMethod('POST')){
-           // $modele->setIdLivreur($request->get('idLivreur'));
             $modele->setId($request->get('id'));
             $modele->setCategorie($request->get('categorie'));
             $modele->setCible($request->get('cible'));

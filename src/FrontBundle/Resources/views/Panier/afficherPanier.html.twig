@@ -32,20 +32,18 @@
                                         <td class="column-3">
                                             <div class="wrap-num-product flex-w m-l-auto m-r-0">
                                                 <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-minus"></i>
+                                                    <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/modifierPaniermoins/{{ i.idLignecommande }}" class="zmdi zmdi-minus"></a>
+
                                                 </div>
 
                                                 <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value={{  i.quantiteLignecommande }}>
 
                                                 <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
-                                                    <i class="fs-16 zmdi zmdi-plus"></i>
+                                                     <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/modifierPanierplus/{{ i.idLignecommande }}" class="zmdi zmdi-plus"></a>
                                                 </div>
                                             </div></td>
                                         <td class="column-4">{{  i.prixPanier}} TND</td>
                                         <td class="column-5"> <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/supprimerPanier/{{ i.idLignecommande }}" class="zmdi zmdi-delete" ></a> </td>
-                                        <td class="column-5"> <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/modifierPanier/{{ i.idLignecommande }}" class="zmdi zmdi-edit" ></a> </td>
-
-
 
                                     </tr>
                                 {% endfor %}
@@ -58,7 +56,7 @@
                                 <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text" name="coupon" placeholder="Coupon Code">
 
                                 <div class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-                                    Appliquer coupon
+                                    Appliquer coupons
                                 </div>
                             </div>
 
@@ -91,9 +89,9 @@
                             </div>
                         </div>
 
-                        <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                        <a href="{{ path('ajouterCommande') }}" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                             Commander
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

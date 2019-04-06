@@ -86,6 +86,8 @@ class Commande
         $this->etat = $etat;
     }
 
+
+
     /**
      * @return int
      */
@@ -175,7 +177,7 @@ class Commande
     }
 
     /**
-     * @param string $livreur
+     * @param string
      */
     public function setLivreur($livreur)
     {

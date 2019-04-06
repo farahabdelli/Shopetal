@@ -50,6 +50,3 @@ afficherCategorieFleur:
 afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
-afficherDetailsProduit:
-    path:     /afficherDetailsProduit/{id}
-    defaults: { _controller: FrontBundle:Produit:afficherDetailsProduit }
