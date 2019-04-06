@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0685242-5bd1-4179-9236-927aaeee7c27" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -60,10 +58,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="43" />
+            <state relative-caret-position="-5">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
               <folding>
                 <element signature="e#42#99#0#PHP" expanded="true" />
+                <element signature="e#1598#1621#1#PHP" expanded="true" />
+                <element signature="e#1599#1640#1#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -74,6 +74,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="68">
               <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+              <folding>
+                <element signature="e#13#27#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="83">
               <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
@@ -97,6 +100,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="51">
               <caret line="3" column="70" selection-start-line="3" selection-start-column="70" selection-end-line="3" selection-end-column="70" />
+              <folding>
+                <element signature="e#12#30#0#Twig" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,20 +112,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="505">
-              <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+            <state relative-caret-position="460">
+              <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+            <state relative-caret-position="208">
+              <caret line="218" column="63" lean-forward="true" selection-start-line="218" selection-start-column="63" selection-end-line="218" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -127,7 +133,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="93">
               <caret line="14" column="54" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="54" />
             </state>
           </provider>
@@ -136,7 +142,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/RechercherProduit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
+            <state relative-caret-position="406">
               <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="10" />
             </state>
           </provider>
@@ -224,13 +230,13 @@
         <option value="$PROJECT_DIR$/src/BackBundle/Entity/Catalogue.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/default/baseFrontProduit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/baseFrontProduit.html.twig" />
+        <option value="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" />
         <option value="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeCatalogue.html.twig" />
         <option value="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig" />
         <option value="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/DetailsProduit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" />
       </list>
     </option>
   </component>
@@ -277,7 +283,7 @@
       <path value="$PROJECT_DIR$/vendor/jdorn/sql-formatter" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="676" />
     <option name="width" value="697" />
     <option name="height" value="745" />
@@ -287,59 +293,71 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
-              <item name="Resources" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Shopetal1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Shopetal1" type="462c0819:PsiDirectoryNode" />
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
               <item name="Resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="Produit" type="462c0819:PsiDirectoryNode" />
@@ -348,7 +366,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -405,7 +422,6 @@
       <workItem from="1553952252963" duration="444000" />
       <workItem from="1554026701299" duration="8474000" />
       <workItem from="1554279795607" duration="7130000" />
-      <workItem from="1554588945377" duration="188000" />
     </task>
     <task id="LOCAL-00001" summary="modification frontend #farah">
       <created>1553780695833</created>
@@ -474,7 +490,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87102000" />
+    <option name="totallyTimeSpent" value="86310000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -489,7 +505,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19591528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -764,20 +780,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/DetailsProduit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        <state relative-caret-position="460">
+          <caret line="51" column="75" selection-start-line="51" selection-start-column="75" selection-end-line="51" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/RechercherProduit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
           <folding>
-            <element signature="e#13#27#0#Twig" expanded="true" />
+            <element signature="e#42#99#0#PHP" expanded="true" />
+            <element signature="e#1598#1621#1#PHP" expanded="true" />
+            <element signature="e#1599#1640#1#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="93">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -797,41 +829,27 @@
     <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/modifierProduit.html.twig">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="54" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="54" />
+        <state relative-caret-position="83">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/RechercherProduit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/DetailsProduit.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="10" />
+        <state relative-caret-position="68">
+          <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding>
+            <element signature="e#13#27#0#Twig" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="43" />
-          <folding>
-            <element signature="e#42#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="505">
-          <caret line="53" column="42" selection-start-line="53" selection-start-column="42" selection-end-line="53" selection-end-column="42" />
+        <state relative-caret-position="208">
+          <caret line="218" column="63" lean-forward="true" selection-start-line="218" selection-start-column="63" selection-end-line="218" selection-end-column="63" />
         </state>
       </provider>
     </entry>
