@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c0685242-5bd1-4179-9236-927aaeee7c27" name="Default Changelist" comment="crud commande incomplet +offre(avec date)#farah">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base2.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base2.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/baseBack.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/baseBack.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/ajouterlivreur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/ajouterlivreur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/listelivreur.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/listelivreur.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Panier/afficherPanier.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Panier/afficherPanier.html.twig" afterDir="false" />
+    <list default="true" id="c0685242-5bd1-4179-9236-927aaeee7c27" name="Default Changelist" comment="controle de saisie #farah">
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/baseFrontProduit.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/DetailsProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeCatalogue.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeCatalogue.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/BackBundle/Resources/views/Produit/listeProduit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Controller/ProduitController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/FrontBundle/Resources/views/Produit/listeProduit.html.twig" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/annotations/" />
@@ -65,14 +67,14 @@
           <entry key="js" value="132" />
           <entry key="php" value="255" />
           <entry key="twig" value="264" />
-          <entry key="txt" value="80" />
+          <entry key="txt" value="102" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="132" />
           <entry key="PHP" value="255" />
-          <entry key="PLAIN_TEXT" value="80" />
+          <entry key="PLAIN_TEXT" value="102" />
           <entry key="Twig" value="264" />
         </counts>
       </usages-collector>
@@ -80,14 +82,14 @@
         <counts>
           <entry key="js" value="2" />
           <entry key="php" value="9" />
-          <entry key="twig" value="19" />
+          <entry key="twig" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="2" />
           <entry key="PHP" value="9" />
-          <entry key="Twig" value="19" />
+          <entry key="Twig" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
@@ -132,11 +134,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/baseBack.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="132">
               <caret line="123" column="56" selection-start-line="123" selection-start-column="56" selection-end-line="123" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/ajouterlivreur.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -333,6 +344,36 @@
               <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
               <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="BackBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Livreur" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Shopetal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Shopetal" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="FrontBundle" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -347,15 +388,15 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wamp64\www\Shopetal\web\templateback\assets\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wamp64\www\Shopetal\src\FrontBundle\Repository" />
       <recent name="C:\wamp64\www\Shopetal\src\FrontBundle\Resources\views\Produit" />
       <recent name="C:\wamp64\www\Shopetal\src\BackBundle\Resources\views\Offres" />
       <recent name="C:\wamp64\www\Shopetal\src\BackBundle\Controller" />
       <recent name="C:\wamp64\www\Shopetal\src\BackBundle\Resources\views\Voucher" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\Shopetal\web\templateback\assets\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -464,7 +505,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91471000" />
+    <option name="totallyTimeSpent" value="91568000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -835,13 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/ajouterlivreur.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/jsfarah.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -874,6 +908,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="123" column="56" selection-start-line="123" selection-start-column="56" selection-end-line="123" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BackBundle/Resources/views/Livreur/ajouterlivreur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
         </state>
       </provider>
     </entry>

@@ -22,13 +22,9 @@ addtocart:
     path:     /addtocart/{id}
     defaults: { _controller: FrontBundle:Panier:addtocart }
 
-modifierPanierplus :
-    path:     /modifierPanierplus/{id}
-    defaults: { _controller: FrontBundle:Panier:modifierPanierplus }
-
-modifierPaniermoins :
-    path:     /modifierPaniermoins/{id}
-    defaults: { _controller: FrontBundle:Panier:modifierPaniermoins }
+modifierPanier :
+    path:     /modifierPanier/{id}
+    defaults: { _controller: FrontBundle:Panier:modifierPanier }
 
 supprimerPanier :
     path:     /supprimerPanier/{id}
@@ -45,17 +41,6 @@ addtofavoris:
 supprimerFavoris :
     path:     /supprimerFavoris/{id}
     defaults: { _controller: FrontBundle:Favoris:supprimerFavoris }
-
-
-ajouterCommande :
-    path:     /ajouterCommande
-    defaults: { _controller: FrontBundle:Panier:ajouterCommande }
-
-
-afficherCommande :
-    path:     /afficherCommande
-    defaults: { _controller: FrontBundle:Commande:afficherCommande }
-
 rechercherCatalogue:
     path:     /rechercherCatalogue
     defaults: { _controller: FrontBundle:Produit:rechercherCatalogue }
@@ -65,4 +50,3 @@ afficherCategorieFleur:
 afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
-
