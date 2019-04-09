@@ -15,3 +15,11 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+bin/symfony_requirements
+.idea/workspace.xml
+.idea/commandlinetools/Symfony_3_24_19_1_48_PM_s.xml
+.idea/commandlinetools/Symfony_08_04_19_23_22_s.xml
+.idea/commandlinetools/Composer_3_24_19_1_48_PM_c.xml
+.idea/commandlinetools/Composer_08_04_19_22_57_c.xml
+web/config.php
+.idea/commandlinetools/Composer_3_24_19_1_48_PM_c.xml

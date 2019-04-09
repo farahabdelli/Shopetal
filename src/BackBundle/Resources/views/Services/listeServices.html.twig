@@ -1,0 +1,46 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+
+    <td><a href={{path('completer_service')}}>Completer un service</a></td>
+    <br><br>
+
+
+<h2>Liste des Services</h2>
+    <br><br>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+        <tr>
+
+            <th>id_membre</th>
+            <th>id_jardinier</th>
+            <th>id_service</th>
+            <th>type de service</th>
+            <th>nbheures</th>
+            <th>nbjours</th>
+            <th>prix</th>
+        </tr>
+        </thead>
+        <tbody>
+
+            {% for i in m %}
+        <tr>
+
+            <td>{{ i.idMembre }}</td>
+            <td>{{ i.idJardinier}}</td>
+            <td>{{ i.idService }}</td>
+            <td>{{ i.nomService }}</td>
+            <td>{{ i.nbheures }}</td>
+            <td>{{ i.nbjours }}</td>
+            <td>{{ i.prix }}</td>
+
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerJardinier/{{ i.idservice }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierJardinier/{{ i.idservice }}" class="btn btn-warning" >Modifier</a> </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

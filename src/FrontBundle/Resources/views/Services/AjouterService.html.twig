@@ -1,0 +1,32 @@
+{% extends 'base2.html.twig' %}
+
+{% block Service %}
+    <script type="text/javascript" src="{{asset('js/jquery.js')}}">
+    </script>
+
+    <script>
+
+
+        $(document).ready(function () {
+            $('#frontbundle_listeservices_nom, label[for="#id_racktypeid"]').hide();
+            $('#id_racktypeid, label[for="#id_racktypeid"]').parent().hide();
+
+
+            $(function(){
+                $("#frontbundle_listeservices_nom").click(function(){
+                    var col_val = $(this).find("td:eq(5)").text();
+
+                    if (col_val == '0'){
+                        $(this).addClass('chosen');  //the selected class colors the row green//
+                    }
+
+                });
+            });
+
+
+
+        });
+    </script>
+    {{ form(form) }}
+
+{% endblock %}

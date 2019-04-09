@@ -50,3 +50,7 @@ afficherCategorieFleur:
 afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
+
+ajouterService:
+    path:     /ajouterService
+    defaults: { _controller: FrontBundle:Service:ajouterService }

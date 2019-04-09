@@ -1,7 +1,7 @@
 <?php
 
 namespace BackBundle\Entity;
-
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="membre")
  * @ORM\Entity
  */
-class Membre
+class Membre extends BaseUser 
 {
     /**
      * @var integer
