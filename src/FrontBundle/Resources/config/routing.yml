@@ -50,3 +50,13 @@ afficherCategorieFleur:
 afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
+
+
+ajouterCommande:
+    path:     /ajouterCommande
+    defaults: { _controller: FrontBundle:Panier:ajouterCommande }
+
+
+afficherCommande:
+    path:     /afficherCommande
+    defaults: { _controller: FrontBundle:Commande:afficherCommande }
