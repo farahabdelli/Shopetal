@@ -22,9 +22,13 @@ addtocart:
     path:     /addtocart/{id}
     defaults: { _controller: FrontBundle:Panier:addtocart }
 
-modifierPanier :
-    path:     /modifierPanier/{id}
-    defaults: { _controller: FrontBundle:Panier:modifierPanier }
+modifierPanierplus :
+    path:     /modifierPanierplus/{id}
+    defaults: { _controller: FrontBundle:Panier:modifierPanierplus }
+
+modifierPaniermoins :
+    path:     /modifierPaniermoins/{id}
+    defaults: { _controller: FrontBundle:Panier:modifierPaniermoins }
 
 supprimerPanier :
     path:     /supprimerPanier/{id}
@@ -50,7 +54,9 @@ afficherCategorieFleur:
 afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
-
+afficherDetailsProduit:
+    path:     /afficherDetailsProduit/{id}
+    defaults: { _controller: FrontBundle:Produit:afficherDetailsProduit }
 
 ajouterCommande:
     path:     /ajouterCommande
