@@ -4,19 +4,19 @@
 
 <h2>Ajouter un livreur</h2>
     <br><br>
-<form method="POST">
+<form method="POST" onsubmit="return veriflivreur(this)" >
 
         <tr>
             <td>Nom et prénom:</td>
-            <td><input type="text" class="form-control input-default " name="nomLivreur"></td><br/><br/>
+            <td><input type="text" class="form-control input-default " name="nomLivreur" onkeypress="verifNom(this)"></td><br/><br/>
         </tr>
         <tr>
             <td>Mail:</td>
-            <td><input type="text" class="form-control input-default " name="mailLivreur"></td><br/><br/>
+            <td><input type="text" class="form-control input-default " name="mailLivreur" onkeypress="verifMail(this)"></td><br/><br/>
         </tr>
         <tr>
             <td>Téléphone:</td>
-            <td><input type="number" class="form-control input-default " name="telLivreur"></td>
+            <td><input type="number" class="form-control input-default " name="telLivreur" onkeypress="verifTel(this)"></td>
         </tr><br/><br/>
         <tr>
             <td>Disponibilité:</td>
@@ -28,7 +28,7 @@
 
         <tr>
 
-            <td><center><input type="submit" class="btn btn-default" value="Ajouter"></center></td><br/><br/>
+            <td><center><input type="submit" class="btn btn-default" value="Ajouter" ></center></td><br/><br/>
         </tr>
 
 
