@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 
 class ProduitController extends Controller
@@ -188,6 +189,25 @@ class ProduitController extends Controller
 
             'form' => $form->createView()
         ]);
+    }
+
+    public function PdfProduitAction()
+    {
+
+        $em=$this->getDoctrine()->getManager();
+        $modeles=$em->getRepository('BackBundle:Produits')->findAll();
+
+        $snappy = $this->get('knp_snappy.pdf');
+        $html = $this->renderView('@Back/Produit/pdf.html.twig', array('title' => 'Hello World !',"model"=>$modeles));
+        $filename = 'myFirstSnappyPDF';
+        return new Response(
+            $snappy->getOutputFromHtml($html),
+            200,
+            array(
+                'Content-Type'          => 'application/pdf',
+                'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
+            )
+        );
     }
 
 
