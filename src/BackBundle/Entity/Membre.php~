@@ -5,7 +5,7 @@ use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Membre
+ * Class Membre
  *
  * @ORM\Table(name="membre")
  * @ORM\Entity
@@ -14,9 +14,8 @@ class Membre extends BaseUser
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(type="integer")
      * @ORM\Id
+     * @ORM\Column(type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
@@ -27,4 +26,3 @@ class Membre extends BaseUser
     }
 
 }
-
