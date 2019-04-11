@@ -45,17 +45,6 @@ addtofavoris:
 supprimerFavoris :
     path:     /supprimerFavoris/{id}
     defaults: { _controller: FrontBundle:Favoris:supprimerFavoris }
-
-
-ajouterCommande :
-    path:     /ajouterCommande
-    defaults: { _controller: FrontBundle:Panier:ajouterCommande }
-
-
-afficherCommande :
-    path:     /afficherCommande
-    defaults: { _controller: FrontBundle:Commande:afficherCommande }
-
 rechercherCatalogue:
     path:     /rechercherCatalogue
     defaults: { _controller: FrontBundle:Produit:rechercherCatalogue }
@@ -66,3 +55,17 @@ afficherCategoriePlantes:
     path:     /afficherCategoriePlantes
     defaults: { _controller: FrontBundle:Produit:afficherCategoriePlantes }
 
+ajouterService:
+    path:     /ajouterService
+    defaults: { _controller: FrontBundle:Service:ajouterService }
+afficherDetailsProduit:
+    path:     /afficherDetailsProduit/{id}
+    defaults: { _controller: FrontBundle:Produit:afficherDetailsProduit }
+
+ajouterCommande:
+    path:     /ajouterCommande
+    defaults: { _controller: FrontBundle:Panier:ajouterCommande }
+
+afficherCommande:
+    path:     /afficherCommande
+    defaults: { _controller: FrontBundle:Commande:afficherCommande }

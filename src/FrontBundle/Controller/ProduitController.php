@@ -56,4 +56,16 @@ class ProduitController extends Controller
         return $this->render('@Front/Produit/listeProduit.html.twig',array('m'=>$modeles));
 
     }
+
+    public function  afficherDetailsProduitAction($id)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+
+
+        $modeles=$em->getRepository('FrontBundle:Catalogue')->find($id);
+
+        return $this->render('@Front/Produit/DetailsProduit.html.twig',array('m'=>$modeles));
+
+    }
 }

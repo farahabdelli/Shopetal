@@ -43,7 +43,7 @@
                                                 </div>
                                             </div></td>
                                         <td class="column-4">{{  i.prixPanier}} TND</td>
-                                        <td class="column-5"> <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/supprimerPanier/{{ i.idLignecommande }}" class="zmdi zmdi-delete" ></a> </td>
+                                        <td class="column-5"> <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/supprimerPanier/{{ i.idLignecommande }}" class="zmdi zmdi-delete" onclick="return confirmDelete(this)"></a> </td>
 
                                     </tr>
                                 {% endfor %}

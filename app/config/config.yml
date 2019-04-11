@@ -11,8 +11,10 @@ parameters:
     locale: en
 
 framework:
+    templating:
+        engines: ['twig']
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: ~
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -70,6 +72,33 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: BackBundle\Entity\Membre
+    service:                               # this lines
+        mailer: fos_user.mailer.twig_swift # this lines
+    from_email:
+        address: "anwer.bouhouch@gmail.com"
+        sender_name: "unknown"
+
 sensio_framework_extra:
    router:
         annotations: false
+
+
+
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        # If you have wkhtmltopdf as an environment variable you don't need to provide the
+        # full path to the executable, use it in the same way as you use in the console
+        #binary:  "wkhtmltopdf"
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltopdf.exe\""
+        options:    []
+    image:
+        enabled:    true
+        binary:     "\"C:\\Program Files\\wkhtmltopdf\\bin\\wkhtmltoimage.exe\""
+        options:    []
+    temporary_folder: %kernel.cache_dir%/snappy
