@@ -30,6 +30,9 @@ supprimerProduit :
 modifierProduit :
     path:     /modifierProduit/{id}
     defaults: { _controller: BackBundle:Produit:modifierProduit }
+PdfProduit:
+    path:     /PdfProduit
+    defaults: { _controller: BackBundle:Produit:PdfProduit }
 
 
 afficher_commande:
