@@ -97,6 +97,17 @@ modifierOffre :
 ajouterOffre :
     path:     /ajouterOffre
     defaults: { _controller: BackBundle:Offre:ajouterOffre }
+
+afficher_service:
+    path:     /afficher_Service
+    defaults: { _controller: BackBundle:Services:afficherService }
+completer_service:
+    path:     /completer_Service
+    defaults: { _controller: BackBundle:Services:affecterService }
+
+details_jardinier:
+    path:     /details_jardinier/{id}
+    defaults: { _controller: BackBundle:Jardinier:detailsJardinier }
 chartProduit:
     path:     /chartProduit
     defaults: { _controller: BackBundle:Produit:chartProduit }

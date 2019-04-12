@@ -115,4 +115,12 @@ class JardinierController extends Controller
 
 
     }
+    public function detailsJardinierAction (Request $request,$id)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $modele = $em->getRepository('BackBundle:Jardinier')->find($id);
+
+        return $this->render('@Back/Jardinier/detailsJardinier.html.twig',array('j'=>$modele));
+    }
 }

@@ -11,8 +11,10 @@ parameters:
     locale: en
 
 framework:
+    templating:
+        engines: ['twig']
     #esi: ~
-    #translator: { fallbacks: ['%locale%'] }
+    translator: ~
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -69,6 +71,16 @@ swiftmailer:
     username: '%mailer_user%'
     password: '%mailer_password%'
     spool: { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: BackBundle\Entity\Membre
+    service:                               # this lines
+        mailer: fos_user.mailer.twig_swift # this lines
+    from_email:
+        address: "anwer.bouhouch@gmail.com"
+        sender_name: "unknown"
 
 sensio_framework_extra:
    router:

@@ -38,9 +38,9 @@ class Service
     /**
      * @var string
      *
-     * @ORM\Column(name="service", type="string", length=50, nullable=false)
+     * @ORM\Column(name="nom_service", type="string", length=50, nullable=false)
      */
-    private $service;
+    private $nomService;
 
     /**
      * @var integer
@@ -68,7 +68,7 @@ class Service
      * @param int $idService
      * @param int $idMembre
      * @param int $idJardinier
-     * @param string $service
+     * @param string $nomService
      * @param int $nbheures
      * @param int $nbjours
      * @param float $prix
@@ -78,7 +78,7 @@ class Service
         $this->idService = $idService;
         $this->idMembre = $idMembre;
         $this->idJardinier = $idJardinier;
-        $this->service = $service;
+        $this->nomService = $service;
         $this->nbheures = $nbheures;
         $this->nbjours = $nbjours;
         $this->prix = $prix;
@@ -135,9 +135,9 @@ class Service
     /**
      * @return string
      */
-    public function getService()
+    public function getNomService()
     {
-        return $this->service;
+        return $this->nomService;
     }
 
     /**

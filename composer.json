@@ -16,7 +16,9 @@
     "require": {
         "php": ">=5.5.9",
         "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/migrations": "^1.5",
         "doctrine/orm": "^2.5",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
         "incenteev/composer-parameter-handler": "^2.0",
         "knplabs/knp-snappy-bundle": "^1.5",
         "ob/highcharts-bundle": "^1.6",

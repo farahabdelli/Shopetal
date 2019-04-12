@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new FrontBundle\FrontBundle(),
             new BackBundle\BackBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+            new FOS\UserBundle\FOSUserBundle(),
             new Ob\HighchartsBundle\ObHighchartsBundle(),
         ];
 

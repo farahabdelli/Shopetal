@@ -1,0 +1,116 @@
+
+{% extends 'baseBack.html.twig' %}
+{% block main %}
+    <script type="text/javascript" src="{{asset('js/jquery.js')}}">
+    </script>
+
+    <script>
+
+
+        $(document).ready(function () {
+
+            $(function(){
+                $("#tableau_jardinier tr").each(function(){
+                    var col_val = $(this).find("td:eq(5)").text();
+
+                    if (col_val == '0'){
+                        $(this).addClass('chosen');  //the selected class colors the row green//
+                    }
+
+                });
+            });
+
+            $("#tableau_service #content tr").each(function(){
+                var col_val = $(this).find("td:eq(1)").text();
+
+                if (col_val == ''){
+                    $(this).css('background-color','#ff7070')  //the selected class colors the row green//
+                }
+
+            });
+            $('#tableau_jardinier').click(function(){
+                var col_val = $(this).find("td:eq(0)").text();
+                var dest = 'details_jardinier/';
+                window.open(dest.concat(col_val), '_blank');
+                return false;
+
+            });
+
+        });
+    </script>
+
+
+<div style="float: left; width: 40%">
+
+<h2>Liste des Jardiniers</h2>
+    <br><br>
+
+    <table  id="tableau_jardinier" class="table table-hover ">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Adresse</th>
+            <th>Téléphone</th>
+            <th>Disponibilité</th>
+
+        </tr>
+        </thead>
+        <tbody >
+
+            {% for i in j %}
+        <tr >
+            <td>{{ i.id }}</td>
+            <td>{{ i.nom }}</td>
+            <td>{{ i.prenom}}</td>
+            <td>{{ i.adresse }}</td>
+            <td>{{ i.numero }}</td>
+            <td>{{ i.disponibilite }}</td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+<div style="float: right; width: 50%">
+    <h2>Liste des Services</h2>
+    <br><br>
+
+    <table  id="tableau_service" class="table table-hover ">
+        <thead>
+        <tr>
+
+            <th>id_membre</th>
+            <th>id_jardinier</th>
+            <th>id_service</th>
+            <th>type de service</th>
+            <th>nbheures</th>
+            <th>nbjours</th>
+            <th>prix</th>
+        </tr>
+        </thead>
+        <tbody id="content">
+
+        {% for i in s %}
+            <tr>
+
+                <td>{{ i.idMembre }}</td>
+                <td>{{ i.idJardinier}}</td>
+                <td>{{ i.idService }}</td>
+                <td>{{ i.nomService }}</td>
+                <td>{{ i.nbheures }}</td>
+                <td>{{ i.nbjours }}</td>
+                <td>{{ i.prix }}</td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+{% endblock %}
