@@ -9,7 +9,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Ob\HighchartsBundle\Highcharts\Highchart;
+use Zend\Json\Expr;
 
 class ProduitController extends Controller
 {
@@ -208,6 +209,85 @@ class ProduitController extends Controller
                 'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
             )
         );
+
+    }
+    public function chartProduitAction()
+    {
+        $produits = $this->getDoctrine()->getManager()->getRepository('BackBundle:Produits')->findAll();
+        $ArrayProduits = array();
+
+        foreach ($produits as $p)
+        {
+            array_push($ArrayProduits,$p->getNom());
+        }
+        $ArrayContite = array();
+        foreach ($produits as $p)
+        {
+            array_push($ArrayContite,$p->getQuantite());
+        }
+
+        $series = array(
+            array(
+                'name'  => 'Quantite',
+                'type'  => 'column',
+                'color' => '#4572A7',
+                'yAxis' => 1,
+                'data'  => $ArrayContite,
+            ),
+            array(
+                'name'  => 'Temperature',
+                'type'  => 'spline',
+                'color' => '#AA4643',
+                'data'  => $ArrayContite,
+            ),
+        );
+        $yData = array(
+            array(
+                'labels' => array(
+                    'formatter' => new Expr('function () { return this.value + " degrees C" }'),
+                    'style'     => array('color' => '#AA4643')
+                ),
+                'title' => array(
+                    'text'  => 'Temperature',
+                    'style' => array('color' => '#AA4643')
+                ),
+                'opposite' => true,
+            ),
+            array(
+                'labels' => array(
+                    'formatter' => new Expr('function () { return this.value + "Quantite" }'),
+                    'style'     => array('color' => '#4572A7')
+                ),
+                'gridLineWidth' => 0,
+                'title' => array(
+                    'text'  => 'Quaantite',
+                    'style' => array('color' => '#4572A7')
+                ),
+            ),
+        );
+        $categories = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('linechart'); // The #id of the div where to render the chart
+        $ob->chart->type('column');
+        $ob->title->text('Average Monthly Weather Data for Tokyo');
+        $ob->xAxis->categories($ArrayProduits);
+        $ob->yAxis($yData);
+        $ob->legend->enabled(false);
+        $formatter = new Expr('function () {
+                 var unit = {
+                     "Quantite": "Quantite",
+                     "Temperature": "degrees C"
+                 }[this.series.name];
+                 return this.x + ": <b>" + this.y + "</b> " + unit;
+             }');
+        $ob->tooltip->formatter($formatter);
+        $ob->series($series);
+
+        return $this->render('@Back/Produit/chartProduit.html.twig', array(
+            'chart' => $ob
+        ));
     }
 
 

@@ -97,3 +97,6 @@ modifierOffre :
 ajouterOffre :
     path:     /ajouterOffre
     defaults: { _controller: BackBundle:Offre:ajouterOffre }
+chartProduit:
+    path:     /chartProduit
+    defaults: { _controller: BackBundle:Produit:chartProduit }
