@@ -31,13 +31,13 @@ class LivreurController extends Controller
         $modeles->setTelLivreur($modeles->getTelLivreur());
         $modeles->setDisponibilite($modeles->getDisponibilite());
         $form=$this->createFormBuilder($modeles)
-            ->add('nomLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('mailLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('telLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('nomLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
+            ->add('mailLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
+            ->add('telLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
             ->add('disponibilite', ChoiceType::class,
                 [
                     'choices' => [
-                        'Non disponible', 'Disponible'],
+                        'Non disponible'=>'Non disponible', 'Disponible'=>'Disponible'],
 
                     'attr' => array('class' => 'form-control')])
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))

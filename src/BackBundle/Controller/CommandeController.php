@@ -47,7 +47,7 @@ class CommandeController extends Controller
             ->add('etat', ChoiceType::class,
                 [
                 'choices' => [
-                    'En cours de traitement', 'En cours de livraison', 'Livrée'],
+                    'En cours de traitement'=>'En cours de traitement', 'En cours de livraison'=>'En cours de livraison', 'Livrée'=>'Livrée'],
 
                 'attr' => array('class' => 'form-control')])
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))

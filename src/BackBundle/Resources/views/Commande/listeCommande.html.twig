@@ -36,7 +36,7 @@
             <td>{{ i.Livreur.nomLivreur }}</td>
             <td>{{ i.etat }}</td>
 
-            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerCommande/{{ i.idCommande }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerCommande/{{ i.idCommande }}" class="btn btn-danger" onclick="return confirmDelete(this)" >Supprimer</a> </td>
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierCommande/{{ i.idCommande }}" class="btn btn-warning" >Modifier</a> </td>
 
         </tr>

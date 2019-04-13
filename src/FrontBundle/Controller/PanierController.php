@@ -24,7 +24,7 @@ class PanierController extends Controller
     }
 
 
-    public function addtocartAction( $id)
+    public function addtocartAction(Request $request , $id)
     {
         # Get object from doctrine manager
 
@@ -43,6 +43,7 @@ class PanierController extends Controller
         $cart->setPrixPanier($product->getPrix());
         $em->persist($cart);
         $em->flush();
+        $this->sendNotification($request);
         return $this->redirectToRoute('afficherCatalogue');
 
     }
@@ -98,7 +99,7 @@ class PanierController extends Controller
 
         $com = new Commande();
         $com->setTotal($modele);
-        $com->setIdUser("user");
+        $com->setIdUser($this->getUser());
         $com->setEtat(' ');
 
 
@@ -127,6 +128,20 @@ class PanierController extends Controller
             'form2' => $form->createView()
         ]);
 
+
+    }
+    public function sendNotification(Request $request)
+    {
+        $manager = $this->get('mgilet.notification');
+        $notif = $manager->createNotification('Hello world !');
+        $notif->setMessage('This a notification.');
+        $notif->setLink('http://symfony.com/');
+        // or the one-line method :
+        // $manager->createNotification('Notification subject','Some random text','http://google.fr');
+
+        // you can add a notification to a list of entities
+        // the third parameter `$flush` allows you to directly flush the entities
+        $manager->addNotification(array($this->getUser()), $notif, true);
 
     }
 
