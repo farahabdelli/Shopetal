@@ -108,3 +108,6 @@ completer_service:
 details_jardinier:
     path:     /details_jardinier/{id}
     defaults: { _controller: BackBundle:Jardinier:detailsJardinier }
+chartProduit:
+    path:     /chartProduit
+    defaults: { _controller: BackBundle:Produit:chartProduit }
