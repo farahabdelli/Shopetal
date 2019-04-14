@@ -49,4 +49,14 @@ class FavorisController extends Controller
         return $this->redirectToRoute('afficherFavoris');
     }
 
+    public function  afficherDetailsFavorisAction($idProduit)
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $modeles=$em->getRepository('FrontBundle:Favoris')->findfavorisDQL($idProduit);
+
+        return $this->render('@Front/Favoris/DetailsFavoris.html.twig',array('m' => $modeles));
+
+    }
+
 }

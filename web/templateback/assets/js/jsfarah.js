@@ -80,7 +80,7 @@ function veriflivreur(f)
 }
 
 function confirmDelete(f) {
-    if (confirm("Etes vous sur de supprimer ce livreur  ?")) {
+    if (confirm("Etes vous sur de supprimer cette ligne  ?")) {
        return true;
     } else {
       alert("Suppression annulée");
