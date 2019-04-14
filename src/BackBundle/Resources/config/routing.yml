@@ -111,3 +111,7 @@ details_jardinier:
 chartProduit:
     path:     /chartProduit
     defaults: { _controller: BackBundle:Produit:chartProduit }
+MoinsQuantite:
+    path:     /MoinsQuantite
+    defaults: { _controller: BackBundle:Produit:MoinsQuantite }
+
