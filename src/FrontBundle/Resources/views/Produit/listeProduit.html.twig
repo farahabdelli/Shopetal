@@ -3,10 +3,24 @@
 
 {% block Produit %}
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable ").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+    <input id="myInput" type="text" placeholder="Search..">
+    <br><br>
 
-        <div class="row isotope-grid">
+        <div class="row isotope-grid"  >
     {% for i in m %}
-            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women">
+
+            <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women" id="myTable">
                 <!-- Block2 -->
 
 

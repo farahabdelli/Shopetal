@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Ob\HighchartsBundle\Highcharts\Highchart;
 use Zend\Json\Expr;
+use Doctrine\ORM\EntityRepository;
 
 class ProduitController extends Controller
 {
@@ -83,11 +84,13 @@ class ProduitController extends Controller
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('BackBundle:Produits')->findAll();
 
+        $noms=$em->getRepository('BackBundle:Produits')->findProduitMoins();
+        $no=$em->getRepository('BackBundle:Produits')->findProduitNonDispo();
 
 
 
 
-        return $this->render('@Back/Produit/listeProduit.html.twig',array('m'=>$modeles));
+        return $this->render('@Back/Produit/listeProduit.html.twig',array('m'=>$modeles,'noms'=>$noms,'no'=>$no));
     }
     public function ajouterProduitAction(Request $request)
     {
@@ -235,7 +238,7 @@ class ProduitController extends Controller
                 'data'  => $ArrayContite,
             ),
             array(
-                'name'  => 'Temperature',
+                'name'  => 'Quantite',
                 'type'  => 'spline',
                 'color' => '#AA4643',
                 'data'  => $ArrayContite,
@@ -244,11 +247,11 @@ class ProduitController extends Controller
         $yData = array(
             array(
                 'labels' => array(
-                    'formatter' => new Expr('function () { return this.value + " degrees C" }'),
+                    'formatter' => new Expr('function () { return this.value + " Quantite" }'),
                     'style'     => array('color' => '#AA4643')
                 ),
                 'title' => array(
-                    'text'  => 'Temperature',
+                    'text'  => '',
                     'style' => array('color' => '#AA4643')
                 ),
                 'opposite' => true,
@@ -265,20 +268,20 @@ class ProduitController extends Controller
                 ),
             ),
         );
-        $categories = array('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec');
+
 
 
         $ob = new Highchart();
         $ob->chart->renderTo('linechart'); // The #id of the div where to render the chart
         $ob->chart->type('column');
-        $ob->title->text('Average Monthly Weather Data for Tokyo');
+        $ob->title->text('La quantitée des produits en stock');
         $ob->xAxis->categories($ArrayProduits);
         $ob->yAxis($yData);
         $ob->legend->enabled(false);
         $formatter = new Expr('function () {
                  var unit = {
                      "Quantite": "Quantite",
-                     "Temperature": "degrees C"
+                     "Quantite": "Quantite"
                  }[this.series.name];
                  return this.x + ": <b>" + this.y + "</b> " + unit;
              }');
@@ -288,6 +291,13 @@ class ProduitController extends Controller
         return $this->render('@Back/Produit/chartProduit.html.twig', array(
             'chart' => $ob
         ));
+    }
+    public function MoinsQuantiteAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $noms=$em->getRepository('BackBundle:Produits')->findProduitNonDispo();
+
+        return $this->render('@Back/Produit/moins.html.twig',array('noms'=>$noms));
     }
 
 
