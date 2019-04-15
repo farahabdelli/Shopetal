@@ -9,7 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-
+use Mgilet\NotificationBundle\MgiletNotificationBundle;
 
 class PanierController extends Controller
 {
@@ -17,7 +17,7 @@ class PanierController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $fm = $this->getDoctrine()->getManager();
-        $modeles = $em->getRepository('FrontBundle:Lignecommande')->findAll();
+        $modeles = $em->getRepository('FrontBundle:Lignecommande')->panierDQL();
         $modele = $fm->getRepository('FrontBundle:Lignecommande')->totalDQL();
 
         return $this->render('@Front/Panier/afficherPanier.html.twig', array('emm' => $modeles , 'mm' => $modele));

@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 
 
 class LivreurController extends Controller
@@ -103,5 +104,38 @@ class LivreurController extends Controller
 
 
 
+    }
+
+    public function chartLivreurAction()
+    {
+
+           $em = $this->getDoctrine()->getManager();
+          $modeles=$em->getRepository('BackBundle:Livreur')->StatlivDQL();
+
+
+
+        //var_dump($modeles);
+
+
+        $pieChart = new PieChart();
+        $pieChart->getData()->setArrayToDataTable($modeles);
+       /* $pieChart->getData()->setArrayToDataTable(
+            [['Task', 'Hours per Day'],
+                ['Non disponible',     4],
+                ['Disponible',      2]
+
+            ]
+        );*/
+
+        $pieChart->getOptions()->setTitle('Disponibilite des livreurs');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+
+        return $this->render('BackBundle:Commande:statCommande.html.twig', array('piechart' => $pieChart));
     }
 }

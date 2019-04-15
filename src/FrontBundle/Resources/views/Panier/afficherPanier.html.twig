@@ -36,13 +36,13 @@
 
                                                 </div>
 
-                                                <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value={{  i.quantiteLignecommande }}>
+                                                <input class="mtext-104 cl3 txt-center num-product" type="number" name="num-product1" value={{  i.Quantite }}>
 
                                                 <div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m">
                                                      <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/modifierPanierplus/{{ i.idLignecommande }}" class="zmdi zmdi-plus"></a>
                                                 </div>
                                             </div></td>
-                                        <td class="column-4">{{  i.prixPanier}} TND</td>
+                                        <td class="column-4">{{  i.total}} TND</td>
                                         <td class="column-5"> <a href="{{ absolute_url(asset('')) }}app_dev.php/Front/supprimerPanier/{{ i.idLignecommande }}" class="zmdi zmdi-delete" onclick="return confirmDelete(this)"></a> </td>
 
                                     </tr>

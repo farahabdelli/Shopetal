@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 
 
 class CommandeController extends Controller
@@ -34,10 +35,10 @@ class CommandeController extends Controller
         $modeles->setLivreur($modeles->getLivreur());
         $modeles->setEtat($modeles->getEtat());
         $form=$this->createFormBuilder($modeles)
-            ->add('total', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('idUser', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('adresse', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('ville', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('total', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'=>true))
+            ->add('idUser', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'=>true))
+            ->add('adresse', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'=>true))
+            ->add('ville', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'=>true))
             ->add('livreur', EntityType::class,array(
                 'class' =>'BackBundle:Livreur',
                 'choice_label'=>'nomLivreur',
@@ -98,6 +99,39 @@ class CommandeController extends Controller
 
 
         return $this->render('@Back/Commande/listeCommande.html.twig',array('m'=>$modeles));
+    }
+
+    public function chartCommandeAction()
+    {
+
+     //   $em = $this->getDoctrine()->getManager();
+      //  $modeles=$em->getRepository('BackBundle:Commande')->StatDQL();
+
+
+
+        //var_dump($resultat);
+
+
+        $pieChart = new PieChart();
+        $pieChart->getData()->setArrayToDataTable(
+            [['Task', 'Hours per Day'],
+                ['En cours de traitement',     11],
+                ['En cours de livraison',      2],
+                ['Livrée',  2]
+
+            ]
+        );
+
+        $pieChart->getOptions()->setTitle('Etats des commandes');
+        $pieChart->getOptions()->setHeight(500);
+        $pieChart->getOptions()->setWidth(900);
+        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
+        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
+
+        return $this->render('BackBundle:Commande:statCommande.html.twig', array('piechart' => $pieChart));
     }
 
 }
