@@ -19,7 +19,23 @@ class CommandeRepository extends \Doctrine\ORM\EntityRepository
          $data = array();
         foreach ($resultat as $values)
         {
-            $a = array($values['Etat'],$values['Com']);
+            $a = array($values['Etat'],intval($values['Com']));
+            array_push($data,$a);
+        }
+        return $data;
+
+    }
+
+    public function StatvilleDQL()
+    {
+        $query = $this->getEntityManager()->createQuery('select count(c.idCommande) as Com,c.ville as ville from BackBundle:Commande c GROUP BY c.ville');
+
+
+        $resultat = $query->getArrayResult();
+        $data = array();
+        foreach ($resultat as $values)
+        {
+            $a = array($values['ville'],intval($values['Com']));
             array_push($data,$a);
         }
         return $data;

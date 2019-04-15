@@ -117,6 +117,10 @@ chartCommande:
     path:     /chartCommande
     defaults: { _controller: BackBundle:Commande:chartCommande }
 
+chartCommandeville:
+    path:     /chartCommandeville
+    defaults: { _controller: BackBundle:Commande:chartCommandeville }
+
 chartLivreur:
     path:     /chartLivreur
     defaults: { _controller: BackBundle:Livreur:chartLivreur }

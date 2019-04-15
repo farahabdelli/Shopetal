@@ -15,14 +15,15 @@ class LivreurRepository extends \Doctrine\ORM\EntityRepository
         $query = $this->getEntityManager()->createQuery('select count(c.idLivreur) as Liv,c.disponibilite as dispo from BackBundle:Livreur c GROUP BY c.disponibilite');
 
 
-         $resultat = $query->getArrayResult();
-         $data = array();
+         $resultat = $query->getResult();
+        $datas = array();
         foreach ($resultat as $values)
         {
-            $a = array($values['dispo'],$values['Liv']);
-            array_push($data,$a);
+            $a = array($values['dispo'],intval($values['Liv']));
+            array_push($datas,$a);
         }
-        return $data;
+        return $datas;
+
 
     }
 }

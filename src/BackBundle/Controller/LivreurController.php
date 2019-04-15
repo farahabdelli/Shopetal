@@ -7,7 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+use Ob\HighchartsBundle\Highcharts\Highchart;
 
 
 class LivreurController extends Controller
@@ -73,12 +73,19 @@ class LivreurController extends Controller
     }
 
 
-    public function afficherlivreurAction()
+    public function afficherlivreurAction(Request $request)
     {
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('BackBundle:Livreur')->findAll();
 
-        return $this->render('@Back/Livreur/listelivreur.html.twig',array('m'=>$modeles));
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $modeles,
+            $request->query->getInt('page', 1), /*page number*/
+            $request->query->getInt('limit',4)
+        );
+
+        return $this->render('@Back/Livreur/listelivreur.html.twig',array('m'=>$result));
     }
 
 
@@ -109,33 +116,27 @@ class LivreurController extends Controller
     public function chartLivreurAction()
     {
 
-           $em = $this->getDoctrine()->getManager();
-          $modeles=$em->getRepository('BackBundle:Livreur')->StatlivDQL();
+           $em = $this->getDoctrine()->getEntityManager();
 
 
+        $data=$em->getRepository('BackBundle:Livreur')->StatlivDQL();
 
-        //var_dump($modeles);
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('piechart');
+        $ob->title->text('Disponibilité des livreurs');
+        $ob->plotOptions->pie(array(
+            'allowPointSelect'  => true,
+            'cursor'    => 'pointer',
+            'dataLabels'    => array('enabled' => false),
+            'showInLegend'  => true
+        ));
+
+        $ob->series(array(array('type' => 'pie','name' => 'Browser share', 'data' => $data)));
+        return $this->render('BackBundle:Livreur:statLivreur.html.twig', array(
+            'chart' => $ob
+        ));
 
 
-        $pieChart = new PieChart();
-        $pieChart->getData()->setArrayToDataTable($modeles);
-       /* $pieChart->getData()->setArrayToDataTable(
-            [['Task', 'Hours per Day'],
-                ['Non disponible',     4],
-                ['Disponible',      2]
-
-            ]
-        );*/
-
-        $pieChart->getOptions()->setTitle('Disponibilite des livreurs');
-        $pieChart->getOptions()->setHeight(500);
-        $pieChart->getOptions()->setWidth(900);
-        $pieChart->getOptions()->getTitleTextStyle()->setBold(true);
-        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
-        $pieChart->getOptions()->getTitleTextStyle()->setItalic(true);
-        $pieChart->getOptions()->getTitleTextStyle()->setFontName('Arial');
-        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(20);
-
-        return $this->render('BackBundle:Commande:statCommande.html.twig', array('piechart' => $pieChart));
     }
 }

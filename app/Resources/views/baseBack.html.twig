@@ -41,16 +41,16 @@
                 <li class="label"></li>
 
 
-
                 <li><a class="sidebar-sub-toggle"><i class="ti-bar-chart-alt"></i>  Statistiques  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
                     <ul>
                         <li><a href={{path('chartProduit')}}>Produits</a></li>
-                        <li><a href="chart-morris.html">Services</a></li>
-                        <li><a href={{ path('chartCommande') }}>Commandes</a></li>
+                        <li><a class="sidebar-sub-toggle">Commandes  <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href={{ path('chartCommande') }}>Etat des commandes</a></li>
+                            <li><a href={{ path('chartCommandeville') }}>Commandes par ville</a></li>
+                        </ul>
+                        </li>
                         <li><a href={{ path('chartLivreur') }}>Livreurs</a></li>
-                        <li><a href="chart-peity.html">offres</a></li>
-                        <li><a href="chart-sparkline.html">Coupons</a></li>
-
                     </ul>
                 </li>
                 <li><a href={{path('afficher_Produit')}}><i class="ti-layout-grid2-alt"></i> Produits </a></li>
