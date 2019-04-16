@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Livreur
  *
  * @ORM\Table(name="livreur")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="BackBundle\Repository\LivreurRepository")
  */
 class Livreur
 {

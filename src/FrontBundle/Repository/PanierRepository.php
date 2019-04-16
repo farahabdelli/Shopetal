@@ -26,4 +26,11 @@ class PanierRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function PanierDQL(){
+        $query=$this->getEntityManager()->createQuery("select p.idLignecommande, p.nomProduit,p.prixProduit,SUM(p.quantiteLignecommande) as Quantite,SUM(p.prixPanier) as total from FrontBundle:Lignecommande p GROUP BY p.idProduit ");
+        return $query->execute();
+
+
+    }
+
 }

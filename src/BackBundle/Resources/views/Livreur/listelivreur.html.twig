@@ -8,6 +8,7 @@
 <h2>Liste des livreurs</h2>
     <br><br>
 
+
     <table class="table table-striped table-hover ">
         <thead>
         <tr>
@@ -37,5 +38,9 @@
         {% endfor %}
         </tbody>
     </table>
+    {# display navigation #}
+    <br><br>
+    <div class="navigation">
+    {{ knp_pagination_render(m) }}
 
 {% endblock %}

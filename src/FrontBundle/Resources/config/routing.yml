@@ -69,3 +69,7 @@ ajouterCommande:
 afficherCommande:
     path:     /afficherCommande
     defaults: { _controller: FrontBundle:Commande:afficherCommande }
+
+afficherDetailsFavoris:
+    path:     /afficherDetailsFavoris/{idProduit}
+    defaults: { _controller: FrontBundle:Favoris:afficherDetailsFavoris }

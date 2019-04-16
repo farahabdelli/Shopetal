@@ -9,7 +9,9 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Ob\HighchartsBundle\Highcharts\Highchart;
+use Zend\Json\Expr;
+use Doctrine\ORM\EntityRepository;
 
 class ProduitController extends Controller
 {
@@ -82,11 +84,13 @@ class ProduitController extends Controller
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('BackBundle:Produits')->findAll();
 
+        $noms=$em->getRepository('BackBundle:Produits')->findProduitMoins();
+        $no=$em->getRepository('BackBundle:Produits')->findProduitNonDispo();
 
 
 
 
-        return $this->render('@Back/Produit/listeProduit.html.twig',array('m'=>$modeles));
+        return $this->render('@Back/Produit/listeProduit.html.twig',array('m'=>$modeles,'noms'=>$noms,'no'=>$no));
     }
     public function ajouterProduitAction(Request $request)
     {
@@ -208,6 +212,92 @@ class ProduitController extends Controller
                 'Content-Disposition'   => 'inline; filename="'.$filename.'.pdf"'
             )
         );
+
+    }
+    public function chartProduitAction()
+    {
+        $produits = $this->getDoctrine()->getManager()->getRepository('BackBundle:Produits')->findAll();
+        $ArrayProduits = array();
+
+        foreach ($produits as $p)
+        {
+            array_push($ArrayProduits,$p->getNom());
+        }
+        $ArrayContite = array();
+        foreach ($produits as $p)
+        {
+            array_push($ArrayContite,$p->getQuantite());
+        }
+
+        $series = array(
+            array(
+                'name'  => 'Quantite',
+                'type'  => 'column',
+                'color' => '#4572A7',
+                'yAxis' => 1,
+                'data'  => $ArrayContite,
+            ),
+            array(
+                'name'  => 'Quantite',
+                'type'  => 'spline',
+                'color' => '#AA4643',
+                'data'  => $ArrayContite,
+            ),
+        );
+        $yData = array(
+            array(
+                'labels' => array(
+                    'formatter' => new Expr('function () { return this.value + " Quantite" }'),
+                    'style'     => array('color' => '#AA4643')
+                ),
+                'title' => array(
+                    'text'  => '',
+                    'style' => array('color' => '#AA4643')
+                ),
+                'opposite' => true,
+            ),
+            array(
+                'labels' => array(
+                    'formatter' => new Expr('function () { return this.value + "Quantite" }'),
+                    'style'     => array('color' => '#4572A7')
+                ),
+                'gridLineWidth' => 0,
+                'title' => array(
+                    'text'  => 'Quaantite',
+                    'style' => array('color' => '#4572A7')
+                ),
+            ),
+        );
+
+
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('linechart'); // The #id of the div where to render the chart
+        $ob->chart->type('column');
+        $ob->title->text('La quantitée des produits en stock');
+        $ob->xAxis->categories($ArrayProduits);
+        $ob->yAxis($yData);
+        $ob->legend->enabled(false);
+        $formatter = new Expr('function () {
+                 var unit = {
+                     "Quantite": "Quantite",
+                     "Quantite": "Quantite"
+                 }[this.series.name];
+                 return this.x + ": <b>" + this.y + "</b> " + unit;
+             }');
+        $ob->tooltip->formatter($formatter);
+        $ob->series($series);
+
+        return $this->render('@Back/Produit/chartProduit.html.twig', array(
+            'chart' => $ob
+        ));
+    }
+    public function MoinsQuantiteAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $noms=$em->getRepository('BackBundle:Produits')->findProduitNonDispo();
+
+        return $this->render('@Back/Produit/moins.html.twig',array('noms'=>$noms));
     }
 
 

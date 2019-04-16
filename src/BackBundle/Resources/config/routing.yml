@@ -117,3 +117,24 @@ completer_service:
 details_jardinier:
     path:     /details_jardinier/{id}
     defaults: { _controller: BackBundle:Jardinier:detailsJardinier }
+chartProduit:
+    path:     /chartProduit
+    defaults: { _controller: BackBundle:Produit:chartProduit }
+
+
+chartCommande:
+    path:     /chartCommande
+    defaults: { _controller: BackBundle:Commande:chartCommande }
+
+chartCommandeville:
+    path:     /chartCommandeville
+    defaults: { _controller: BackBundle:Commande:chartCommandeville }
+
+chartLivreur:
+    path:     /chartLivreur
+    defaults: { _controller: BackBundle:Livreur:chartLivreur }
+
+MoinsQuantite:
+    path:     /MoinsQuantite
+    defaults: { _controller: BackBundle:Produit:MoinsQuantite }
+

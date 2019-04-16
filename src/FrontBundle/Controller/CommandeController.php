@@ -12,7 +12,7 @@ class CommandeController extends Controller
     public function afficherCommandeAction()
     {
         $em=$this->getDoctrine()->getManager();
-        $modeles=$em->getRepository('FrontBundle:Commande')->findAll();
+        $modeles=$em->getRepository('FrontBundle:Commande')->afficherCommDQL($this->getUser());
 
 
 

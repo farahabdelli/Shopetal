@@ -7,6 +7,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Ob\HighchartsBundle\Highcharts\Highchart;
 
 
 class LivreurController extends Controller
@@ -31,13 +32,13 @@ class LivreurController extends Controller
         $modeles->setTelLivreur($modeles->getTelLivreur());
         $modeles->setDisponibilite($modeles->getDisponibilite());
         $form=$this->createFormBuilder($modeles)
-            ->add('nomLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('mailLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('telLivreur', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('nomLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
+            ->add('mailLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
+            ->add('telLivreur', TextType::class, array('attr' => array('class' => 'form-control'),'disabled'   => true))
             ->add('disponibilite', ChoiceType::class,
                 [
                     'choices' => [
-                        'Non disponible', 'Disponible'],
+                        'Non disponible'=>'Non disponible', 'Disponible'=>'Disponible'],
 
                     'attr' => array('class' => 'form-control')])
             ->add('save', SubmitType::class, array('label' => 'Enregistrer Modification', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-top:10px')))
@@ -72,12 +73,19 @@ class LivreurController extends Controller
     }
 
 
-    public function afficherlivreurAction()
+    public function afficherlivreurAction(Request $request)
     {
         $em=$this->getDoctrine()->getManager();
         $modeles=$em->getRepository('BackBundle:Livreur')->findAll();
 
-        return $this->render('@Back/Livreur/listelivreur.html.twig',array('m'=>$modeles));
+        $paginator  = $this->get('knp_paginator');
+        $result = $paginator->paginate(
+            $modeles,
+            $request->query->getInt('page', 1), /*page number*/
+            $request->query->getInt('limit',4)
+        );
+
+        return $this->render('@Back/Livreur/listelivreur.html.twig',array('m'=>$result));
     }
 
 
@@ -101,6 +109,33 @@ class LivreurController extends Controller
         return $this->render('@Back/Livreur/ajouterlivreur.html.twig');
 
 
+
+
+    }
+
+    public function chartLivreurAction()
+    {
+
+           $em = $this->getDoctrine()->getEntityManager();
+
+
+        $data=$em->getRepository('BackBundle:Livreur')->StatlivDQL();
+
+
+        $ob = new Highchart();
+        $ob->chart->renderTo('piechart');
+        $ob->title->text('Disponibilité des livreurs');
+        $ob->plotOptions->pie(array(
+            'allowPointSelect'  => true,
+            'cursor'    => 'pointer',
+            'dataLabels'    => array('enabled' => false),
+            'showInLegend'  => true
+        ));
+
+        $ob->series(array(array('type' => 'pie','name' => 'Browser share', 'data' => $data)));
+        return $this->render('BackBundle:Livreur:statLivreur.html.twig', array(
+            'chart' => $ob
+        ));
 
 
     }
