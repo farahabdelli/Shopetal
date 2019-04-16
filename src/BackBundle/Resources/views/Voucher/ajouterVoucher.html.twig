@@ -4,7 +4,7 @@
 
 <h2>Ajouter un coupon</h2>
     <br><br>
-<form method="POST">
+<form method="POST" onsubmit="return verifCoupon(this)">
 
         <tr>
             <td>Code coupon:</td>
@@ -20,7 +20,7 @@
         </tr><br/><br/>
         <tr>
             <td>taux:</td>
-            <td><input type="number" class="form-control input-default " name="rate"></td>
+            <td><input type="number" class="form-control input-default " name="rate" onkeypress="verifTaux(this)"></td>
         </tr><br/><br/>
 
         <tr>

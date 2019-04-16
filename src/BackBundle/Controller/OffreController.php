@@ -48,7 +48,7 @@ class OffreController extends Controller
         $modeles->setDateDebut2($modeles->getDateDebut());
         $modeles->setDateFin2($modeles->getDateFin());
         $form=$this->createFormBuilder($modeles)
-            ->add('id', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('id', TextType::class, array('attr' => array('class' => 'form-control'),'disabled' => true ))
             ->add('categorie', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('cible', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('taux', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -97,9 +97,9 @@ class OffreController extends Controller
     public function afficherOffreAction()
     {
         $em=$this->getDoctrine()->getManager();
-        $modeles=$em->getRepository('BackBundle:Offres')->findAll();
+        $offres=$em->getRepository('BackBundle:Offres')->findAll();
+        return $this->render('@Back/Offre/listeOffres.html.twig',array('m'=>$offres));
 
-        return $this->render('@Back/Offre/listeOffres.html.twig',array('m'=>$modeles));
     }
 
 
@@ -107,6 +107,7 @@ class OffreController extends Controller
 
     public function ajouterOffreAction(Request $request)
     {
+
         $modele=new Offres();
         if($request->isMethod('POST')){
             $modele->setId($request->get('id'));
@@ -127,4 +128,78 @@ class OffreController extends Controller
 
 
     }
+
+    public function appliquerOffreProduitAction($taux,$cible)
+    {
+
+
+        $fm = $this->getDoctrine()->getManager();
+        $modele = $fm->getRepository('BackBundle:Produits')->getPrixInitialProduitDQL();
+
+    }
+
+
+    public function envoiMailAction($id)
+    {
+        $Offre = $this->getDoctrine()->getRepository('BackBundle:Offres')->find($id);
+
+        $categorie=$Offre->getCategorie();
+        $cible=$Offre->getCible();
+        $taux=$Offre->getTaux();
+        $dateDebut=$Offre->getDateDebut();
+        $dateFin=$Offre->getDateFin();
+
+
+        $membres= $this->getDoctrine()->getRepository('BackBundle:Membre')->findAll();
+
+        $html = $this->renderView(
+            '@Back/Offre/mail.html.twig',array(
+                'categorie'=>$categorie,
+                'taux'=>$taux,
+                'cible'=>$cible,
+                'dateDebut'=>$dateDebut,
+                'dateFin'=>$dateFin
+            )
+        );
+
+
+
+
+        $filename = "Mail.pdf";
+        $pdf = $this->get("knp_snappy.pdf")->getOutputFromHtml($html);
+
+
+
+
+
+        $message = (new \Swift_Message('Recommendation'))
+            ->setFrom('alaaeddine.ayari1@esprit.tn');
+            //->setTo('knoxville1@live.fr')
+//            ->setBody(
+//
+//                $this->renderView(
+//                    '@Back/Offre/mail.html.twig',array(
+//                        'categorie'=>$categorie,
+//                        'taux'=>$taux,
+//                        'cible'=>$cible,
+//                        'dateDebut'=>$dateDebut,
+//                        'dateFin'=>$dateFin
+//                    )
+//                ));
+        foreach($membres as $m)
+        {
+            $message->addTo($m->getEmail());
+
+        }
+
+        $attachement = \Swift_Attachment::newInstance($pdf, $filename ,'application/pdf');
+        $message->attach($attachement);
+        $this->get('mailer')->send($message);
+
+        return $this->redirectToRoute('afficherOffre');
+
+
+
+    }
+
 }

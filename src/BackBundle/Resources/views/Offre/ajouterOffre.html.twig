@@ -4,7 +4,7 @@
 
 <h2>Ajouter une offre</h2>
     <br><br>
-<form method="POST">
+<form method="POST" onsubmit="return verifOffre(this)">
 
         <tr>
             <td> ID:</td>
@@ -13,6 +13,10 @@
         <tr>
             <td>Categorie:</td>
             <td><input type="text" class="form-control input-default " name="categorie"></td><br/><br/>
+            <select>
+                <option> Produits </option>
+                <option> Categorie </option>
+            </select>
         </tr>
         <tr>
             <td>Cible:</td>
@@ -20,7 +24,7 @@
         </tr><br/><br/>
         <tr>
             <td>Taux:</td>
-            <td><input type="number" class="form-control input-default " name="taux"></td>
+            <td><input type="number" class="form-control input-default " name="taux" onkeypress="verifTaux(this)"></td>
         </tr><br/><br/>
 
         <tr>

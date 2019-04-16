@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Produit
  *
  * @ORM\Table(name="produits")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="BackBundle\Repository\ProduitsRepository")
  */
 class Produits
 {

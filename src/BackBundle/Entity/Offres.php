@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Offre
  *
  * @ORM\Table(name="offres")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="BackBundle\Repository\OffresRepository")
  */
 class Offres
 {

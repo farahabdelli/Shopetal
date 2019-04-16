@@ -3,9 +3,12 @@
 {% block main %}
 
     <td><a href="{{path('ajouterOffre')}}" class="btn btn-primary">Ajouter une offre</a></td>
+    <td><a href="{{path('appliquerOffre')}}" class="btn btn-primary">Appliquer Offres</a></td>
+
     <br><br>
 
 <h2>Liste des offres</h2>
+    <input type="text" placeholder="Recherche" class="form-control" id="myInput"> <br>
     <br><br>
 
     <table class="table table-striped table-hover ">
@@ -22,7 +25,7 @@
             <th></th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="myTable">
 
             {% for i in m %}
         <tr>
@@ -34,12 +37,15 @@
             <td>{{ i.dateDebut |date }}</td>
             <td>{{ i.dateFin |date }}</td>
 
-            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerOffre/{{ i.id }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerOffre/{{ i.id }}" class="btn btn-danger" onclick="return confirmDelete(this)">Supprimer</a> </td>
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierOffre/{{ i.id }}" class="btn btn-warning" >Modifier</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/envoiMail/{{ i.id }}" class="btn btn-warning" >Mail !</a> </td>
 
         </tr>
         {% endfor %}
         </tbody>
     </table>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ 'js/event.js' }}"></script>
 
 {% endblock %}

@@ -30,7 +30,7 @@
             <td>{{ i.maxuse }}</td>
             <td>{{ i.rate }}</td>
 
-            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerVoucher/{{ i.vouchercode }}" class="btn btn-danger" >Supprimer</a> </td>
+            <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/supprimerVoucher/{{ i.vouchercode }}" class="btn btn-danger"  onclick="confirmDelete(this)">Supprimer</a> </td>
             <td> <a href="{{ absolute_url(asset('')) }}app_dev.php/Back/modifierVoucher/{{ i.vouchercode }}" class="btn btn-warning" >Modifier</a> </td>
 
         </tr>

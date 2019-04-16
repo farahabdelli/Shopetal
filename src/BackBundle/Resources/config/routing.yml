@@ -17,7 +17,6 @@ supprimerLivreur :
 modifierLivreur :
     path:     /modifierLivreur/{id}
     defaults: { _controller: BackBundle:Livreur:modifierLivreur }
-
 ajouter_Produit:
     path:     /ajouterProduit
     defaults: { _controller: BackBundle:Produit:ajouterProduit }
@@ -33,17 +32,12 @@ modifierProduit :
 PdfProduit:
     path:     /PdfProduit
     defaults: { _controller: BackBundle:Produit:PdfProduit }
-
-
 afficher_commande:
     path:     /affichercommande
     defaults: { _controller: BackBundle:Commande:affichercommande }
-
-
 supprimerCommande :
     path:     /supprimerCommande/{id}
     defaults: { _controller: BackBundle:Commande:supprimerCommande }
-
 modifierCommande :
     path:     /modifierCommande/{id}
     defaults: { _controller: BackBundle:Commande:modifierCommande }
@@ -59,7 +53,6 @@ supprimerProduitCatalogue :
 modifierProduitCatalogue :
     path:     /modifierProduitCatalogue/{id}
     defaults: { _controller: BackBundle:Produit:modifierProduitCatalogue }
-
 ajouter_jardinier:
     path:     /ajouterJardinier
     defaults: { _controller: BackBundle:Jardinier:ajouterJardinier }
@@ -72,6 +65,11 @@ supprimerJardinier :
 modifierJardinier :
     path:     /modifierJardinier/{id}
     defaults: { _controller: BackBundle:Jardinier:modifierJardinier }
+    #############################################################
+    #############################################################
+    #############################################################
+    #############################################################
+
 afficherVoucher :
     path:     /afficherVoucher
     defaults: { _controller: BackBundle:Voucher:afficherVoucher }
@@ -84,7 +82,10 @@ modifierVoucher :
 ajouterVoucher :
     path:     /ajouterVoucher
     defaults: { _controller: BackBundle:Voucher:ajouterVoucher }
-
+    #############################################################
+    #############################################################
+    #############################################################
+    #############################################################
 afficherOffre :
     path:     /afficherOffre
     defaults: { _controller: BackBundle:Offre:afficherOffre }
@@ -97,14 +98,22 @@ modifierOffre :
 ajouterOffre :
     path:     /ajouterOffre
     defaults: { _controller: BackBundle:Offre:ajouterOffre }
-
+appliquerOffre :
+    path:     /appliquerOffre
+    defaults: { _controller: BackBundle:Offre:appliquerOffre }
+envoiMail :
+    path:     /envoiMail/{id}
+    defaults: { _controller: BackBundle:Offre:envoiMail }
+    #############################################################
+    #############################################################
+    #############################################################
+    #############################################################
 afficher_service:
     path:     /afficher_Service
     defaults: { _controller: BackBundle:Services:afficherService }
 completer_service:
     path:     /completer_Service
     defaults: { _controller: BackBundle:Services:affecterService }
-
 details_jardinier:
     path:     /details_jardinier/{id}
     defaults: { _controller: BackBundle:Jardinier:detailsJardinier }
