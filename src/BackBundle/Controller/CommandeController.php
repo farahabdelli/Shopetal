@@ -26,7 +26,10 @@ class CommandeController extends Controller
     }
 
     public function modifierCommandeAction(Request $request,$id )
+
     {
+        //$em = $this->getDoctrine()->getManager();
+      //  $modele = $em->getRepository('BackBundle:Livreur')->LivreurDQL();
         $modeles = $this->getDoctrine()->getRepository('BackBundle:Commande')->find($id);
         $modeles->setTotal($modeles->getTotal());
         $modeles->setIdUser($modeles->getIdUser());
@@ -44,6 +47,7 @@ class CommandeController extends Controller
                 'choice_label'=>'nomLivreur',
                 'multiple'=>false,
                 'placeholder' => ' ',
+                //'query_builder'=>$modele,
                 'attr' => array('class' => 'form-control')))
             ->add('etat', ChoiceType::class,
                 [

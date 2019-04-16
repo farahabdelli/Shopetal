@@ -26,4 +26,14 @@ class LivreurRepository extends \Doctrine\ORM\EntityRepository
 
 
     }
+    public function LivreurDQL()
+    {
+        $query = $this->getEntityManager()->createQuery("select c.nomLivreur as nom from BackBundle:Livreur c where c.disponibilite='Disponible'");
+
+
+        $resultat = $query->getArrayResult();
+
+        return $resultat;
+
+    }
 }

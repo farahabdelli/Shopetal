@@ -34,6 +34,8 @@ class PanierController extends Controller
 
         $product = $this->getDoctrine()->getRepository('FrontBundle:Catalogue')
             ->find($id);
+        $quant=$product->getQuantite();
+        if($quant>0){
         $product->setQuantite($product->getQuantite()-1);
         $cart->setIdProduit($product->getId());
         $cart->setNomProduit($product->getNom());
@@ -43,8 +45,8 @@ class PanierController extends Controller
         $cart->setPrixPanier($product->getPrix());
         $em->persist($cart);
         $em->flush();
-        $this->sendNotification($request);
-        return $this->redirectToRoute('afficherCatalogue');
+        //$this->sendNotification($request);
+        return $this->redirectToRoute('afficherCatalogue');}
 
     }
 
@@ -130,7 +132,7 @@ class PanierController extends Controller
 
 
     }
-    public function sendNotification(Request $request)
+  /*  public function sendNotification(Request $request)
     {
         $manager = $this->get('mgilet.notification');
         $notif = $manager->createNotification('Hello world !');
@@ -139,6 +141,6 @@ class PanierController extends Controller
 
         $manager->addNotification(array($this->getUser()), $notif, true);
 
-    }
+    }*/
 
 }
