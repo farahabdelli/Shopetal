@@ -21,8 +21,8 @@ class AppKernel extends Kernel
             new BackBundle\BackBundle(),
             new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Ob\HighchartsBundle\ObHighchartsBundle(),
-            new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            //new Ob\HighchartsBundle\ObHighchartsBundle(),
+            //new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
         ];
 

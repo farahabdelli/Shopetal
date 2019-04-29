@@ -8,7 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
  * Voucher
  *
  * @ORM\Table(name="voucher")
- * @ORM\Entity
+ *
+ * @ORM\Entity(repositoryClass="FrontBundle\Repository\VoucherRepository")
  */
 class Voucher
 {

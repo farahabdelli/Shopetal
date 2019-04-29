@@ -108,6 +108,19 @@ envoiMail :
     #############################################################
     #############################################################
     #############################################################
+MafficherOffre :
+    path:     /MafficherOffre
+    defaults: { _controller: BackBundle:OffreMobile:MafficherOffre }
+MajouterOffre :
+    path:     /MajouterOffre
+    defaults: { _controller: BackBundle:OffreMobile:MajouterOffre }
+MafficherVoucher :
+    path:     /MafficherVoucher
+    defaults: { _controller: BackBundle:VoucherMobile:MafficherVoucher }
+MajouterVoucher:
+    path:     /MajouterVoucher
+    defaults: { _controller: BackBundle:VoucherMobile:MajouterVoucher}
+    ###################################################
 afficher_service:
     path:     /afficher_Service
     defaults: { _controller: BackBundle:Services:afficherService }

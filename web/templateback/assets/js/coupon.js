@@ -11,9 +11,9 @@ function surligne(champ, erreur)
       champ.style.backgroundColor = "lightgreen";
    	  }
 }
-function verifTaux(champ)
+function verifTauxVoucher(champ)
 {
-  var regex = /^[0-9]*$/;
+  var regex = /^[0-9]\d*$/;
    if(!regex.test(champ.value)  || champ.value.length > 1 || champ.value.length < 0  )
    {
       surligne(champ, true);
@@ -32,7 +32,7 @@ function verifTaux(champ)
 
 function verifCoupon(f)
 {
-  var tauxOK = verifTaux(f.taux);
+  var tauxOK = verifTauxVoucher(f.taux);
 
    
    if( tauxOK )
@@ -47,7 +47,7 @@ function verifCoupon(f)
    }
 }
 
-function confirmDelete(f) {
+function confirmDeleteVoucher(f) {
     if (confirm("Etes vous sur de supprimer ce coupon  ?")) {
        return true;
     } else {

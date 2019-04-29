@@ -14,7 +14,7 @@ class OffresRepository extends \Doctrine\ORM\EntityRepository
 
 
     public function recupOffresDQL(){
-        $query=$this->getEntityManager()->createQuery("SELECT t.id as idoff from BackBundle:Offres t where t.dateDebut BETWEEN CURRENT_DATE() AND CURRENT_DATE() ");
+        $query=$this->getEntityManager()->createQuery("SELECT t.id,t.cible,t.categorie,t.taux from BackBundle:Offres t where t.dateDebut BETWEEN CURRENT_DATE() AND CURRENT_DATE() ");
         $t= $query->getArrayResult();
         return $t;
 

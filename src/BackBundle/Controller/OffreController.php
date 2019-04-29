@@ -8,6 +8,10 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+use Symfony\Component\PropertyAccess\PropertyAccess;
+
+
+
 
 
 class OffreController extends Controller
@@ -20,6 +24,18 @@ class OffreController extends Controller
         $charactersLength = strlen($characters);
         $randomString = '';
 
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+
+
+    public function RandomString($length = 16, $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    {
+        $charactersLength = strlen($characters);
+        $randomString = '';
         for ($i = 0; $i < $length; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
@@ -110,7 +126,8 @@ class OffreController extends Controller
 
         $modele=new Offres();
         if($request->isMethod('POST')){
-            $modele->setId($request->get('id'));
+            //$modele->setId($request->get('id'));
+            $modele->setId($this->generateRandomString());
             $modele->setCategorie($request->get('categorie'));
             $modele->setCible($request->get('cible'));
             $modele->setTaux($request->get('taux'));
@@ -129,12 +146,42 @@ class OffreController extends Controller
 
     }
 
-    public function appliquerOffreProduitAction($taux,$cible)
-    {
+
+    public function appliquerOffreAction(){
+
+        $this->appliquerOffreProduit();
+
+        return $this->redirectToRoute('afficherOffre');
+    }
 
 
-        $fm = $this->getDoctrine()->getManager();
-        $modele = $fm->getRepository('BackBundle:Produits')->getPrixInitialProduitDQL();
+    public function appliquerOffreProduit()
+    { //$accessor = PropertyAccess::getPropertyAccessor();
+        $offresActives= $this->getDoctrine()->getRepository('BackBundle:Offres')->recupOffresDQL();
+        var_dump($offresActives);
+
+        foreach($offresActives as $of)
+        {
+
+                $cible = $of['cible'];
+                $taux = $of['taux'];
+
+            $ancienPrix= $this->getDoctrine()->getRepository('BackBundle:Produits')->getPrixInitialProduitDQL($cible);
+
+            $prixCast = (int)$ancienPrix;
+
+            $a =(intval($ancienPrix))*$taux;
+
+            $nouveauPrix = (intval($ancienPrix))- ($a/100);
+
+
+            $this->getDoctrine()->getRepository('BackBundle:Produits')->setPrixAfficheProduitDQL($nouveauPrix,$cible);
+
+        }
+
+
+
+
 
     }
 
@@ -151,6 +198,7 @@ class OffreController extends Controller
 
 
         $membres= $this->getDoctrine()->getRepository('BackBundle:Membre')->findAll();
+
 
         $html = $this->renderView(
             '@Back/Offre/mail.html.twig',array(
@@ -197,8 +245,18 @@ class OffreController extends Controller
         $this->get('mailer')->send($message);
 
         return $this->redirectToRoute('afficherOffre');
+    }
+
+    public function  rechercherOffresAction(Request $request )
+    {
+        $em=$this->getDoctrine()->getManager();
+
+        $motcle=$request->get('motcle');
+        $modeles=$em->getRepository('FrontBundle:Produits')->findBy(array('nom'=>$motcle));
 
 
+
+        return $this->render('@Front/Produit/listeProduit.html.twig',array('m'=>$modeles));
 
     }
 

@@ -4,27 +4,61 @@
 
 <h2>Ajouter une offre</h2>
     <br><br>
-<form method="POST" onsubmit="return verifOffre(this)">
+<form method="POST">
 
         <tr>
             <td> ID:</td>
             <td><input type="text" class="form-control input-default " name="id"></td><br/><br/>
         </tr>
         <tr>
+            <script type="text/javascript">
+                var zoneDistrict = {
+                    "Produits": ["Plantes", "Fleurs"],
+                    "Services": ["Tendre la pelouse", "Ranger du bois", "Taille de haie", "Débroussaillage"]
+                }
+
+                window.onload = function() {
+                    populateZone();
+                };
+
+                function populateZone() {
+                    var zones = "<option>Please Select</option>";
+                    var data = Object.keys(zoneDistrict); // get keys from zoneDistrict object
+                    for (i=0; i < data.length; i++) {
+                        zones += "<option>" + data[i] + "</option>";
+                    }
+                    document.getElementById("zone").innerHTML = zones;
+                }
+
+                function populateDistrict(zone) {
+                    var districts = "<option>Please Select</option>";
+                    var data = zoneDistrict[zone];
+                    for (i=0; i < data.length; i++) {
+                        districts += "<option>" + data[i] + "</option>";
+                    }
+                    document.getElementById("district").innerHTML = districts;
+                }
+            </script>
             <td>Categorie:</td>
-            <td><input type="text" class="form-control input-default " name="categorie"></td><br/><br/>
-            <select>
-                <option> Produits </option>
-                <option> Categorie </option>
-            </select>
+            <p>
+                <select class="form-control select-dropdown input-default" name="categorie" id="zone" onchange="populateDistrict(this.value)">
+                    <option>Please Select</option>
+                </select>
+            </p>
+            <br><br>
         </tr>
-        <tr>
+        <tr><p>
             <td>Cible:</td>
-            <td><input type="text" class="form-control input-default " name="cible"></td>
+            <td><select id="district"  type="text" class="form-control input-default " name="cible">
+                    <option>Please Select</option>
+                </select>
+            </p>
+
+
         </tr><br/><br/>
         <tr>
             <td>Taux:</td>
-            <td><input type="number" class="form-control input-default " name="taux" onkeypress="verifTaux(this)"></td>
+            <td><input type="number" class="form-control input-default " name="taux" onkeypress="verifTauxOffre(this)" min="0"></td>
         </tr><br/><br/>
 
         <tr>

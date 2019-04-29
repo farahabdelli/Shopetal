@@ -30,4 +30,27 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+    public function getPrixInitialProduitDQL($cible){
+        $query=$this->getEntityManager()->createQuery("SELECT p.prixInitial as prixIni from BackBundle:Produits p where p.categorie = :cible");
+        $query->setParameter('cible', $cible);
+        return $query->getResult();
+
+
+
+    }
+
+    public function setPrixAfficheProduitDQL($nouveauxPrix,$cible){
+
+        $query=$this->getEntityManager()->createQuery("UPDATE BackBundle:Produits p SET p.prix = :nvprix WHERE p.categorie = :cible");
+        $query->setParameter('nvprix', $nouveauxPrix);
+        $query->setParameter('cible', $cible);
+        $query->execute();
+
+    }
+
+    public function findOffre($categorie)
+    {  $query=$this->getEntityManager()->createQuery("select m from BackBundle:Offres m where m.categorie = categorie")->setParameter('categorie',$categorie);
+        return $query->getResult();
+    }
+
 }
